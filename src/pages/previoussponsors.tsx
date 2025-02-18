@@ -8,7 +8,7 @@ interface Sponsor {
   website: string;
 }
 
-type SponsorTier = 'platinum' | 'gold' | 'silver';
+type SponsorTier = 'platinum';
 
 type Sponsors = {
   [K in SponsorTier]: Sponsor[];
@@ -25,10 +25,21 @@ type TierConfig = {
 const SponsorsGrid: React.FC = () => {
   const sponsors: Sponsors = {
     platinum: [
-      { name: 'Tech Giant Corp', logo: '/api/placeholder/120/60', website: 'https://example.com' },
-      { name: 'Innovation Labs', logo: '/api/placeholder/120/60', website: 'https://example.com' }
+      {"name": "Devfolio", "logo": "sponcers/Devfolio.png", "website": "https://devfolio.com"},
+      {"name": "Agprop", "logo": "sponcers/agprop.png", "website": "https://example.com"},
+      {"name": "Airmeet", "logo": "sponcers/Airmeet.png", "website": "https://www.airmeet.com"},
+      {"name": "AlgoZenith", "logo": "sponcers/AlgoZenith.png", "website": "https://AlgoZenith.com"},
+      {"name": "Geeks For Geeks", "logo": "sponcers/Geeks for Geeks.png", "website": "https://tezos.com"},
+      {"name": "DigitalOcean", "logo": "sponcers/DigitalOcean.png", "website": "https://www.digitalocean.com"},
+      {"name": "Google For Developers", "logo": "sponcers/Google For Developers.png", "website": "https://developers.google.com"},
+      {"name": "FlutterFlow", "logo": "sponcers/Flutter Flow.png", "website": "https://flutterflow.io"},
+      {"name": "JetBrains", "logo": "sponcers/JetBrains.png", "website": "https://www.jetbrains.com"},
+      {"name": "Zulip", "logo": "sponcers/Zulip.png", "website": "https://zulip.com"},
+      {"name": "Scaler", "logo": "sponcers/Scaler Edge.png", "website": "https://www.scaler.com"},
+      {"name": "Sketch Edge", "logo": "sponcers/Sketch.png", "website": "https://www.sketch.com"}
+    
     ],
-    gold: [
+    /*gold: [
       { name: 'Digital Solutions', logo: '/api/placeholder/100/50', website: 'https://example.com' },
       { name: 'Future Systems', logo: '/api/placeholder/100/50', website: 'https://example.com' },
       { name: 'Cloud Services', logo: '/api/placeholder/100/50', website: 'https://example.com' }
@@ -38,7 +49,7 @@ const SponsorsGrid: React.FC = () => {
       { name: 'Code Masters', logo: '/api/placeholder/80/40', website: 'https://example.com' },
       { name: 'Web Wizards', logo: '/api/placeholder/80/40', website: 'https://example.com' },
       { name: 'App Builders', logo: '/api/placeholder/80/40', website: 'https://example.com' }
-    ]
+    ]*/
   };
 
   // Rest of the component remains the same...

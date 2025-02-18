@@ -141,7 +141,7 @@ export function HeroDemo() {
             whileTap={{ scale: 0.95 }}
             className="bg-green-700 text-white px-6 py-3 rounded"
           >
-            Register Now
+            Registration Starting Soon
           </motion.button>
         </motion.div>
       </div>

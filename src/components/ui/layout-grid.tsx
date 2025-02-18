@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-
 type Card = {
   id: number;
   content: JSX.Element | React.ReactNode | string;
@@ -26,16 +25,16 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
   };
 
   return (
-    <div className="w-full h-full p-10 grid grid-cols-1 md:grid-cols-3  max-w-7xl mx-auto gap-4 relative">
+    <div className="w-full p-4 md:p-6 lg:p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-[1440px] mx-auto gap-4 md:gap-6 relative">
       {cards.map((card, i) => (
-        <div key={i} className={cn(card.className, "")}>
+        <div key={i} className={cn(card.className, "min-h-[300px] md:min-h-[350px] lg:min-h-[400px]")}>
           <motion.div
             onClick={() => handleClick(card)}
             className={cn(
               card.className,
               "relative overflow-hidden",
               selected?.id === card.id
-                ? "rounded-lg cursor-pointer absolute inset-0 h-1/2 w-full md:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
+                ? "rounded-lg cursor-pointer absolute inset-0 h-2/3 w-full md:w-2/3 lg:w-1/2 m-auto z-50 flex justify-center items-center flex-wrap flex-col"
                 : lastSelected?.id === card.id
                 ? "z-40 bg-white rounded-xl h-full w-full"
                 : "bg-white rounded-xl h-full w-full"
@@ -50,7 +49,7 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
       <motion.div
         onClick={handleOutsideClick}
         className={cn(
-          "absolute h-full w-full left-0 top-0 bg-black opacity-0 z-10",
+          "fixed inset-0 bg-black opacity-0 z-10",
           selected?.id ? "pointer-events-auto" : "pointer-events-none"
         )}
         animate={{ opacity: selected?.id ? 0.3 : 0 }}
@@ -64,10 +63,10 @@ const ImageComponent = ({ card }: { card: Card }) => {
     <motion.img
       layoutId={`image-${card.id}-image`}
       src={card.thumbnail}
-      height="500"
-      width="500"
+      height="800"
+      width="800"
       className={cn(
-        "object-cover object-top absolute inset-0 h-full w-full transition duration-200"
+        "object-cover object-center absolute inset-0 h-full w-full transition duration-200"
       )}
       alt="thumbnail"
     />
@@ -104,7 +103,7 @@ const SelectedCard = ({ selected }: { selected: Card | null }) => {
           duration: 0.3,
           ease: "easeInOut",
         }}
-        className="relative px-8 pb-4 z-[70]"
+        className="relative px-6 pb-6 z-[70]"
       >
         {selected?.content}
       </motion.div>

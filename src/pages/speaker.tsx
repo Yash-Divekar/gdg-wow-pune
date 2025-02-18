@@ -276,7 +276,7 @@ const GoogleCallToSpeakers = () => {
                   transition={{ duration: 3, repeat: Infinity }}
                 />
                 <span className="relative z-10 flex items-center text-xl">
-                  Submit Your Proposal
+                  Proposal Submission Comming Soon
                   <motion.div
                     animate={{ x: [0, 8, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
