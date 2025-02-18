@@ -23,7 +23,7 @@ function App() {
        <div>
         <NavBarDemo/>
         <HeroDemo/>
-        <Venue/>
+        {/*<Venue/>*/}
       
         <Feature/>
         
@@ -34,7 +34,7 @@ function App() {
 
         <GoogleCallToSpeakers/>
 
-        <CallForSponsors/>
+        {/*<CallForSponsors/>*/}
         
         
         <br/>
