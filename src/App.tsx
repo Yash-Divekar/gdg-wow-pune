@@ -4,7 +4,7 @@ import Footer from './pages/footer'
 import { LayoutGridDemo } from './pages/previousevents'
 import { WhatToExpect } from './pages/whattoexpect'
 
-import Faqs3 from './pages/faq'
+import BeautifiedFAQs from './pages/faq'
 import { HeroDemo } from './pages/hero'
 // import Venue from './pages/venue'
 import { NavBarDemo } from './pages/navbar'
@@ -40,7 +40,7 @@ function App() {
         <br/>
         <LayoutGridDemo/>
         <br/>
-        <Faqs3/>
+        <BeautifiedFAQs/>
         
         
         
