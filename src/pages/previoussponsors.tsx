@@ -60,7 +60,7 @@ const SponsorsGrid: React.FC = () => {
       textColor: 'text-blue-700',
       title: 'Platinum'
     },
-    gold: {
+    /*gold: {
       bgColor: 'bg-red-50',
       textColor: 'text-red-700',
       title: 'Gold'
@@ -69,7 +69,7 @@ const SponsorsGrid: React.FC = () => {
       bgColor: 'bg-green-50',
       textColor: 'text-green-700',
       title: 'Silver'
-    }
+    }*/
   };
 
   const containerVariants: Variants = {

@@ -42,7 +42,10 @@ function App() {
           <BeautifiedFAQs />
         </section>
 
-        <Footer />
+        <section id="footr">
+          <Footer />
+        </section>
+        
       </div>
     </>
   );

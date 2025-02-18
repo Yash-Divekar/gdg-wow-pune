@@ -7,7 +7,7 @@ export function NavBarDemo() {
     
     const section = document.getElementById(id);
     if (section) {
-      const offset = 200; // Adjust this value based on your navbar height
+      const offset = 100 ; // Adjust this value based on your navbar height
       const sectionPosition = section.getBoundingClientRect().top + window.scrollY - offset;
 
       window.scrollTo({
@@ -26,12 +26,16 @@ export function NavBarDemo() {
   ];
 
   return (
-    <NavBar
-      items={navItems.map(item => ({
-        ...item,
-        url: `#${item.id}`, // Keeps the hash for usability
-        onClick: (event: React.MouseEvent) => handleScroll(event, item.id),
-      }))}
-    />
+    <div className="h-[50px] overflow-hidden">
+      <NavBar
+        className="h-full"
+        items={navItems.map(item => ({
+          ...item,
+          url: `#${item.id}`,
+          onClick: (event: React.MouseEvent) => handleScroll(event, item.id),
+        }))}
+      />
+    </div>
   );
+  
 }
