@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+<<<<<<< HEAD
 import Outrow from "./outro";
+=======
+import { DefaultDemo } from "@/components/text";
+>>>>>>> 09026db (Imporved Hero Section, Sponcers, etc.)
 
 const BeautifiedFAQs = () => {
   // Google branding colors
@@ -28,7 +32,8 @@ const BeautifiedFAQs = () => {
       id: 2,
       question: "When and where will the WOW event take place?",
       answer:
-        "The WOW event will be held at [Venue Name] in Pune on [Date]. The event will run from [Start Time] to [End Time]. We recommend arriving 30 minutes early for registration.",
+        "The WOW event is coming soon to Pune! Stay tuned for updates on the venue, date, and time. Details will be announced shortly.",
+        //"The WOW event will be held at [Venue Name] in Pune on [Date]. The event will run from [Start Time] to [End Time]. We recommend arriving 30 minutes early for registration.",
       color: colors.red,
       icon: "📅",
     },
@@ -36,7 +41,8 @@ const BeautifiedFAQs = () => {
       id: 3,
       question: "How can I register for the event?",
       answer:
-        "Registration is simple! Visit our website at gdgpune.com/wow-event and click on the 'Register' button. Early bird tickets are available until [Date], so don't miss out on special pricing!",
+        "Registration for the WOW event isn’t live yet! Stay tuned for updates on when you can secure your spot. Details will be announced soon.",
+        //"Registration is simple! Visit our website at gdgpune.com/wow-event and click on the 'Register' button. Early bird tickets are available until [Date], so don't miss out on special pricing!",
       color: colors.yellow,
       icon: "✍️",
     },
@@ -44,7 +50,8 @@ const BeautifiedFAQs = () => {
       id: 4,
       question: "What topics will be covered at the WOW event?",
       answer:
-        "The WOW event will cover a diverse range of topics including AI/ML, Web Development, Cloud Computing, Mobile Development, and emerging technologies. Check our website for the detailed agenda and speaker profiles.",
+        "The WOW event will feature a diverse range of topics, including AI/ML, Web Development, Cloud Computing, Mobile Development, and more. The final lineup is still being finalized, and additional topics may be included. Stay tuned for updates!",
+        //"The WOW event will cover a diverse range of topics including AI/ML, Web Development, Cloud Computing, Mobile Development, and emerging technologies. Check our website for the  speaker profiles.",
       color: colors.green,
       icon: "🧠",
     },
@@ -151,20 +158,7 @@ const BeautifiedFAQs = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <span className="text-blue-600">G</span>
-              <span className="text-red-500">o</span>
-              <span className="text-yellow-500">t</span>
-              <span className="text-blue-600"> </span>
-              <span className="text-green-500">Q</span>
-              <span className="text-red-500">u</span>
-              <span className="text-yellow-500">e</span>
-              <span className="text-blue-600">s</span>
-              <span className="text-green-500">t</span>
-              <span className="text-red-500">i</span>
-              <span className="text-yellow-500">o</span>
-              <span className="text-blue-600">n</span>
-              <span className="text-green-500">s</span>
-              <span className="text-gray-900">?</span>
+              <DefaultDemo name="Got Any Question ?"/>
             </motion.span>
           </h2>
 

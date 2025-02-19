@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 
 interface TimeUnit {
   value: number;
   label: string;
 }
 
-const CountdownTimer: React.FC = () => {
+const CountdownTimer = () => {
+  const googleColors = [
+    { border: 'border-blue-500', text: 'text-blue-500', label: 'text-blue-600' },
+    { border: 'border-red-500', text: 'text-red-500', label: 'text-red-600' },
+    { border: 'border-yellow-500', text: 'text-yellow-500', label: 'text-yellow-600' },
+    { border: 'border-green-500', text: 'text-green-500', label: 'text-green-600' }
+  ];
+
   const calculateTimeLeft = () => {
     const targetDate = new Date('2025-03-15T00:00:00');
     const now = new Date();
@@ -40,114 +46,87 @@ const CountdownTimer: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-wrap justify-center items-center gap-4 p-8">
-      {timeUnits.map((unit, index) => (
-        <motion.div
-          key={unit.label}
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ delay: index * 0.1 }}
-          className="relative"
-        >
-          <motion.div
-            className="w-32 h-32 bg-gradient-to-br from-blue-500 to-green-500 backdrop-blur-md 
-                       rounded-2xl shadow-lg flex flex-col items-center justify-center p-4 
-                       border border-white/10 hover:border-white/20 transition-all duration-300
-                       hover:shadow-xl relative overflow-hidden group"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <motion.div
-              className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"
-              animate={{
-                rotate: [0, 360],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-            
-            <motion.span
-              key={unit.value}
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              className="text-5xl font-bold text-white mb-2 relative z-10"
-            >
-              {String(unit.value).padStart(2, '0')}
-            </motion.span>
-            
-            <span className="text-white/80 text-sm uppercase tracking-wider font-medium relative z-10">
-              {unit.label}
-            </span>
-            
-            <motion.div
-              className="absolute -inset-1 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-purple-500/0"
-              animate={{
-                x: ['-100%', '100%'],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-            />
-          </motion.div>
-        </motion.div>
-      ))}
+    <div className="flex justify-center items-center gap-2 md:gap-4 p-4 w-full">
+      <div className="flex flex-nowrap space-x-2 md:space-x-4">
+        {timeUnits.map((unit, index) => (
+          <div key={unit.label} className="relative flex-shrink-0">
+            <div className={`
+              w-16 h-16 md:w-24 md:h-24 
+              bg-white/80 backdrop-blur-sm
+              rounded-2xl shadow-lg 
+              flex flex-col items-center justify-center
+              border-2 ${googleColors[index].border}
+              transition-all duration-300 hover:scale-105
+              hover:shadow-xl relative overflow-hidden
+              hover:bg-white/95
+            `}>
+              <span className={`text-xl md:text-4xl font-bold ${googleColors[index].text} mb-1 transition-all duration-300`}>
+                {String(unit.value).padStart(2, '0')}
+              </span>
+              <span className={`${googleColors[index].label} text-xs uppercase tracking-wider font-medium`}>
+                {unit.label}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export function HeroDemo() {
+export const HeroDemo = () => {
   return (
-    <div className="min-h-screen">
-      <div className="relative z-10 flex flex-col items-center justify-center gap-6 py-20">
-        <motion.h1 
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          className="text-xl md:text-5xl text-black text-center mb-2"
-        >
-          Google Developer Students Club Presents
-        </motion.h1>
+    <div className="min-h-screen relative bg-gray-50 overflow-hidden">
+      <div className="h-16" />
+      
+      {/* Updated background image positioning */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-3/4 opacity-30 bg-cover bg-bottom bg-no-repeat"
+        style={{ backgroundImage: "url('./shaniwarwada.svg')" }} 
+      />
+      
+      <div className="absolute top-16 left-0 w-64 h-64 bg-blue-500/10 rounded-full -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+      
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-500/10 rounded-full translate-x-1/2 translate-y-1/2 animate-pulse" />
+      
+      <div className="relative z-10 min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center py-8 px-4 space-y-8">
+        <div className="text-center">
+          <h1 className="text-xl md:text-4xl font-bold bg-gradient-to-r from-blue-600 via-red-500 to-yellow-500 bg-clip-text text-transparent mb-2 p-1">
+            Google Developer Groups पुणे
+          </h1>
+          <p className="text-base md:text-xl text-gray-600">
+            Presents
+          </p>
+        </div>
         
-        
-        
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-8"
-        >
-          <img 
-            className="h-[200px] w-[800px] object-contain" 
-            src="./graphic.png" 
-            alt="GDSC Graphic" 
-          />
-        </motion.div>
+        <div className="relative w-full max-w-4xl">
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-transparent to-green-500/20 blur-xl" />
+          <img className="h-[120px] md:h-[160px] w-full object-contain relative z-10" 
+               src="./graphic.png" 
+               alt="GDSC Graphic" />
+        </div>
+
+        <div className="relative w-full max-w-4xl">
+          <img className="h-[120px] md:h-[160px] w-full object-contain relative z-10" 
+               src="./Marathi_Text.png" 
+               alt="Marathi Text" />
+        </div>
 
         <CountdownTimer />
         
-        <motion.div 
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.7 }}
-          className="mt-8"
-        >
-          <motion.button 
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-green-700 text-white px-6 py-3 rounded"
-          >
-            Registration Starting Soon
-          </motion.button>
-        </motion.div>
+        <button className="
+          bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 
+          text-white px-6 py-3 rounded-full font-bold 
+          text-base md:text-lg shadow-lg
+          transition-all duration-300
+          hover:scale-105 hover:shadow-xl
+          active:scale-95
+        ">
+          Register Now
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default HeroDemo;
-
