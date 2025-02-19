@@ -1,21 +1,21 @@
-import './App.css'
-import Footer from './pages/footer'
-import { LayoutGridDemo } from './pages/previousevents'
+import "./App.css";
+import Footer from "./pages/footer";
+import { LayoutGridDemo } from "./pages/previousevents";
 //import { WhatToExpect } from './pages/whattoexpect'
-import BeautifiedFAQs from './pages/faq'
-import { HeroDemo } from './pages/hero'
-import { NavBarDemo } from './pages/navbar'
-import Feature from './pages/feature'
-import { CaseDemo } from './pages/previousspeaker'
-import GoogleCallToSpeakers from './pages/speaker'
-import SponsorsGrid from './pages/previoussponsors'
+import BeautifiedFAQs from "./pages/faq";
+import { HeroDemo } from "./pages/hero";
+import { NavBarDemo } from "./pages/navbar";
+import Feature from "./pages/feature";
+import { CaseDemo } from "./pages/previousspeaker";
+import GoogleCallToSpeakers from "./pages/speaker";
+import SponsorsGrid from "./pages/previoussponsors";
 
 function App() {
   return (
     <>
       <div>
         <NavBarDemo />
-        
+
         <section id="home">
           <HeroDemo />
         </section>
@@ -33,7 +33,6 @@ function App() {
           <SponsorsGrid />
         </section>
 
-
         <section id="events">
           <LayoutGridDemo />
         </section>
@@ -45,7 +44,6 @@ function App() {
         <section id="footr">
           <Footer />
         </section>
-        
       </div>
     </>
   );
