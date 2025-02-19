@@ -6,7 +6,7 @@ import { WhatToExpect } from './pages/whattoexpect'
 
 import Faqs3 from './pages/faq'
 import { HeroDemo } from './pages/hero'
-import Venue from './pages/venue'
+// import Venue from './pages/venue'
 import { NavBarDemo } from './pages/navbar'
 import Feature from './pages/feature'
 import { CaseDemo } from './pages/previousspeaker'
@@ -23,7 +23,7 @@ function App() {
        <div>
         <NavBarDemo/>
         <HeroDemo/>
-        <Venue/>
+        {/* <Venue/> */}
       
         <Feature/>
         

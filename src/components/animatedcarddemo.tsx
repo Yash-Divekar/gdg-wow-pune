@@ -8,24 +8,24 @@ export function AnimatedCardDemo() {
       <MainMenusGradientCard
         className="p-4"
         description="Participants"
-        title="1000 +"
+        title="1000+"
       >
         
       </MainMenusGradientCard>
       <MainMenusGradientCard
         className="p-4"
         description="Speakers"
-        title="35 +"
+        title="35+"
       >
 
       </MainMenusGradientCard>
       <MainMenusGradientCard
         description="Sessions"
-        title="25 +"
+        title="25+"
       />
       <MainMenusGradientCard
         description="Day(s)"
-        title="1"
+        title="2"
       />
     </div>
   );
