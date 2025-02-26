@@ -11,13 +11,13 @@ function FAQ() {
     };
 
     return (
-        <section className="p-12 bg-green-200">
-            <h3 className="ml-10 mt-4 p-2 h-12 w-36 bg-green-500 text-white rounded-full text-center text-2xl">
+        <section className="p-5 pt-20 sm:pt-5 sm:p-12 bg-green-200 outline">
+            <h3 className="mb-5 sm:ml-10 p-2 w-1/4 sm:h-12 sm:w-36 bg-green-500 text-white rounded-full text-center items-center text-lg sm:text-2xl">
                 FAQ's
             </h3>
 
-            <h2 className="text-orange-400 text-[100px] font-semibold">Got Any Questions?</h2>
-            <span className="ml-4 text-xl">Find answers to the most asked questions about GDSC WOW Pune event</span>
+            <h2 className="text-orange-400 text-4xl sm:text-[100px] font-semibold">Got Any Questions?</h2>
+            <p className="ml-1 sm:ml-4 text-basic sm:text-xl">Find answers to the most asked questions about GDSC WOW Pune event</p>
 
             <div className="flex flex-col md:flex-col items-center justify-center mt-5 w-full">
                 <ul className="w-[90%] max-w-[1200px] mx-auto">
@@ -29,7 +29,7 @@ function FAQ() {
                         >
                             {/* Question Box with conditional border radius */}
                             <motion.div 
-                                className={`flex bg-white p-5 w-full outline justify-between cursor-pointer text-xl font-semibold ${
+                                className={`flex bg-white p-4 sm:p-5 w-full outline justify-between cursor-pointer text-sm sm:text-xl font-semibold ${
                                     openIndex === index ? 'rounded-t-xl' : 'rounded-xl'
                                 }`}
                                 onClick={() => toggleDropdown(index)}
@@ -37,13 +37,13 @@ function FAQ() {
                                 whileTap={{ scale: 0.995 }}
                             >
                                 <h4 className="px-5">{Item["Question"]}</h4>
-                                <motion.span 
-                                    className="mr-5"
+                                <motion.img
+                                    src="/Doddles/arrows.svg"
+                                    className="mr-5 w-6 h-6 rotate-90 flex items-center justify-center mt-2 sm:mt-1"
                                     animate={{ rotate: openIndex === index ? 180 : 0 }}
                                     transition={{ duration: 0.3 }}
-                                >
-                                    ▼
-                                </motion.span>
+                                    />
+
                             </motion.div>
 
                             {/* Answer Box */}
@@ -61,7 +61,7 @@ function FAQ() {
                                             animate={{ opacity: 1, y: 0 }}
                                             exit={{ opacity: 0, y: -10 }}
                                             transition={{ duration: 0.2 }}
-                                            className="p-5 ml-5"
+                                            className="p-5 ml-5 text-sm"
                                         >
                                             <p>{Item["Answer"]}</p>
                                         </motion.div>
@@ -74,14 +74,14 @@ function FAQ() {
             </div>
 
             <div className='flex flex-col gap-2 justify-center items-center mt-10 justify-'>
-                <p className=' text-lg'>Have more Question?</p>
-                <a href="mailto:yashdivekar19@gmail.com" className='text-xl bg-green-500 py-3 px-7 rounded-full font-semibold'>Contact Us</a>
+                <p className=' text-basic sm:text-lg'>Have more Question?</p>
+                <a href="mailto:yashdivekar19@gmail.com" className='text-lg sm:text-xl bg-green-500 text-white py-3 px-7 rounded-full font-semibold'>Contact Us</a>
 
-                <div className='w-[80%] bg-slate-200 h-64 mt-10 rounded-3xl outline p-6'>
-                    <h3 className='text-4xl font-semibold my-3'>Keep in touch with GDGoC Pune for latest annoucements</h3>
-                    <spam className="text-xl" >Stake out #WOWPune for the latest updates and news.</spam> 
-                    <div className='flex flex-row gap-5 justify-end items-center mt-5'>
-                        <div className="flex gap-7 ml-auto mr-15 text-black">
+                <div className='w-[80%] bg-slate-200 h-64 mt-10 rounded-3xl outline p-6 custom-shape'>
+                    <h3 className='text-basic sm:text-4xl font-semibold'>Keep in touch with GDGoC Pune for latest annoucements</h3>
+                    <spam className="text-sm sm:text-xl" >Stake out #WOWPune for the latest updates and news.</spam> 
+                    <div className='flex flex-col sm:flex-row gap-5 justify-center sm:justify-end items-center mt-5'>
+                        <div className="flex gap-7 sm:ml-auto sm:mr-15 text-black sm:justify-baseline">
                                             <a href="mailto:contact@gdgocpune.com" target="_blank" rel="noopener noreferrer">
                                             <FaEnvelope className=" text-2xl hover:text-gray-600 transition duration-300 hover:scale-[1.5]" />
                                             </a>
@@ -95,7 +95,7 @@ function FAQ() {
                                             <FaTwitter className=" text-2xl hover:text-gray-600 transition duration-300 hover:scale-[1.5]" />
                                             </a>
                                         </div>
-                                        <img src="/Logo/Main_wow_logo.svg" alt=""  className='w-[20%]'/>
+                                        <img src="/Logo/Main_wow_logo.svg" alt=""  className='sm:w-[20%] w-2/3'/>
                     </div>
                 </div>
                 

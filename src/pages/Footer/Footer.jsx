@@ -1,36 +1,59 @@
-import React from 'react'
-import { FaEnvelope, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import {
+  faLinkedin,
+  faInstagram,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
-function Footer() {
+export default function Footer() {
   return (
-    <>
-        <section className='bg-black h-32 p-6'>
-            <div className='flex flex-row gap-9 items-center text-white mx-10'>
-                <h3 className='text-4xl font-semibold mr-10'>GDGoC Pune</h3>
-                <p className='text-lg'>About GDGoC Program</p>
-                <p className='text-lg'>FAQ</p>
-                <p className='text-lg'>Code Of Coduct</p>
-                <p className='text-lg'>Community Guidelines</p>
+    <footer className="bg-black text-white pt-6 pb-12 px-2 sm:px-12 md:px-24">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-6 sm:space-y-0">
+        {/* Left Section - Brand & Links */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 lg:space-x-10 w-full sm:w-auto text-center sm:text-left">
+          <h2 className="text-2xl font-bold whitespace-nowrap">GDGoC Pune</h2>
+          <nav className="pt-2 flex flex-wrap justify-center sm:justify-start  space-x-4 sm:space-x-6 lg:space-x-10 text-sm sm:text-base">
+            <a href="#" className="hover:text-gray-400">
+              About GDGoC Program
+            </a>
+            <a href="#" className="hover:text-gray-400">
+              FAQ
+            </a>
+            <a href="#" className="hover:text-gray-400">
+              Code of Conduct
+            </a>
+            <a href="#" className="hover:text-gray-400">
+              Community Guidelines
+            </a>
+          </nav>
+        </div>
 
-                <div className="flex gap-7 ml-auto mr-15">
-                    <a href="mailto:contact@gdgocpune.com" target="_blank" rel="noopener noreferrer">
-                    <FaEnvelope className="text-white text-2xl hover:text-gray-400 transition duration-300" />
-                    </a>
-                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin className="text-white text-2xl hover:text-gray-400 transition duration-300" />
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                    <FaInstagram className="text-white text-2xl hover:text-gray-400 transition duration-300" />
-                    </a>
-                    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-                    <FaTwitter className="text-white text-2xl hover:text-gray-400 transition duration-300" />
-                    </a>
-                </div>
-            </div>
-            <p className='text-gray-500 flex justify-center items-center p-3'>@ 2025 GDGoC Pune. All Rights Reserved</p>
-        </section>
-    </>
-  )
+        {/* Right Section - Social Icons */}
+        <div className=" flex space-x-6 sm:space-x-8 mt-2 sm:mt-0 text-xl sm:text-2xl justify-center">
+          <FontAwesomeIcon
+            icon={faEnvelope}
+            className="cursor-pointer hover:text-gray-400"
+          />
+          <FontAwesomeIcon
+            icon={faLinkedin}
+            className="cursor-pointer hover:text-gray-400"
+          />
+          <FontAwesomeIcon
+            icon={faInstagram}
+            className="cursor-pointer hover:text-gray-400"
+          />
+          <FontAwesomeIcon
+            icon={faTwitter}
+            className="cursor-pointer hover:text-gray-400"
+          />
+        </div>
+      </div>
+
+      {/* Copyright Text */}
+      <p className="text-center mt-10 text-gray-500 text-sm">
+        © 2025 GDGoC Pune. All Rights Reserved
+      </p>
+    </footer>
+  );
 }
- 
-export default Footer

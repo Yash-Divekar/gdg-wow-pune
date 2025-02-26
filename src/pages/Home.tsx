@@ -131,7 +131,7 @@ export default function Home() {
   ];
 
   return (
-    <div ref={ref} className="relative flex flex-row">
+    <div ref={ref} className="relative max-h-screen flex md:flex-row flex-col-reverse outline">
       <motion.img
         src="/Grids/grid lines.png"
         alt=""
@@ -148,9 +148,9 @@ export default function Home() {
         }}
       />
       <motion.img
-        src="/Shaniwar_Wada.png"
+        src="/Shaniwar_Wada_With_bg.png"
         alt=""
-        className="h-screen"
+        className="hidden sm:block sm:h-screen"
         initial={{ x: -100, rotate: -10, opacity: 0 }}
         animate={
           isInView
@@ -170,7 +170,7 @@ export default function Home() {
           key={index}
           src={`/Doddles/image_${index}.png`}
           alt=""
-          className={`absolute ${
+          className={`absolute hidden sm:block ${
             index === 1
               ? "w-32 top-[15vh] left-[0.5vw]"
               : index === 2
@@ -213,7 +213,7 @@ export default function Home() {
 <motion.img
           src={`./Logo/Angle_Logo.svg`}
           alt=""
-          className="absolute -top-30 -left-10 scale-[20%]"
+          className="absolute -top-30 -left-10 scale-[20%] hidden md:block"
           initial={toddleAnimations[3].initial}
           animate={
             isInView
@@ -240,7 +240,7 @@ export default function Home() {
           }}
         />
 
-      <div className="text-black ml-auto text-right mr-10 mt-[25vh] flex flex-col gap-4 items-end">
+      <div className="md-4 text-black md:ml-auto justify-center items-center md:text-right md:mr-10 mt-[10vh] md:mt-[25vh] flex flex-col gap-4 md:items-end">
         <motion.h2
           initial={{ x: 100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
@@ -251,62 +251,62 @@ export default function Home() {
             delay: 0.5,
           }}
         >
-          <span className="text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
+          <span className="text-basic md:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
             Google Developer Groups on Campus पुणे
           </span>
           <br />
-          <span className="text-xl">Presents</span>
+          <span className="text-sm md:text-xl flex justify-center md:justify-end">Presents</span>
         </motion.h2>
           
         <div className="relative flex justify-center items-center">
-  {/* Main Image */}
-  <motion.img
-    src="./Logo/Wow_without_circle.svg"
-    alt=""
-    className="w-[30vw]"
-    initial={{ scale: 0, rotate: -10, opacity: 0 }}
-    animate={
-      isInView
-        ? { scale: 1, rotate: 0, opacity: 1 }
-        : { scale: 0, rotate: -10, opacity: 0 }
-    }
-    transition={{
-      type: "spring",
-      stiffness: 200,
-      damping: 15,
-      delay: 0.7,
-    }}
-  />
+          {/* Main Image */}
+          <motion.img
+            src="./Logo/Wow_without_circle.svg"
+            alt=""
+            className="md:w-[30vw] w-6/7"
+            initial={{ scale: 0, rotate: -10, opacity: 0 }}
+            animate={
+              isInView
+                ? { scale: 1, rotate: 0, opacity: 1 }
+                : { scale: 0, rotate: -10, opacity: 0 }
+            }
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 0.7,
+            }}
+          />
 
-  {/* Overlay Circle */}
-  <motion.img
-    src="./Logo/Circle.svg"
-    alt=""
-    className="w-[5vw] absolute top-[51%] left-[52%] -translate-x-1/2 -translate-y-1/2"
-    initial={{ scale: 0, rotate: -10, opacity: 0 }}
-    animate={
-      isInView
-        ? { scale: 1, rotate: 0, opacity: 1 }
-        : { scale: 0, rotate: -10, opacity: 0 }
-    }
-    transition={{
-      type: "spring",
-      stiffness: 200,
-      damping: 15,
-      delay: 0.7,
-    }}
-    whileInView={{
-      rotate: [0, 360],
-      transition: { repeat: Infinity, duration: 5, ease: "linear" },
-    }}
-  />
-</div>
+          {/* Overlay Circle */}
+          <motion.img
+            src="./Logo/Circle.svg"
+            alt=""
+            className="w-1/7 md:w-[5vw] absolute top-[50%] left-[52%] -translate-x-1/2 -translate-y-1/2"
+            initial={{ scale: 0, rotate: -10, opacity: 0 }}
+            animate={
+              isInView
+                ? { scale: 1, rotate: 0, opacity: 1 }
+                : { scale: 0, rotate: -10, opacity: 0 }
+            }
+            transition={{
+              type: "spring",
+              stiffness: 200,
+              damping: 15,
+              delay: 0.7,
+            }}
+            whileInView={{
+              rotate: [0, 360],
+              transition: { repeat: Infinity, duration: 5, ease: "linear" },
+            }}
+          />
+        </div>
 
 
         <motion.img
           src="/pune_slogan.png"
           alt=""
-          className="w-[24vw]"
+          className="w-2/3 sm:w-[24vw]"
           initial={{ scale: 0, rotate: 10, opacity: 0 }}
           animate={
             isInView
@@ -322,7 +322,7 @@ export default function Home() {
         />
 
         <motion.div
-          className="text-white text-center flex flex-row gap-8"
+          className="text-white text-center flex flex-row gap-3 sm:gap-8"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={
             isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
@@ -332,7 +332,7 @@ export default function Home() {
           {countdownItems.map((item, index) => (
             <motion.div
               key={item.label}
-              className="rounded-xl overflow-clip w-20"
+              className="rounded-xl overflow-clip w-17 sm:w-20 font-semibold "
               style={{ border: `1px solid ${item.borderColor}` }}
               variants={bounceVariants}
               initial="initial"
@@ -340,12 +340,12 @@ export default function Home() {
               whileHover="hover"
               transition={{ delay: isInView ? 1.1 + index * 0.1 : 0 }}
             >
-              <div style={{ backgroundColor: item.headerBg }} className="py-1">
+              <div style={{ backgroundColor: item.headerBg }} className="p-2 text-sm sm:text-basic items-center justify-center">
                 {item.label}
               </div>
               <div
                 style={{ backgroundColor: item.contentBg }}
-                className="py-3 text-2xl"
+                className="py-3 text-lg sm:text-2xl"
               >
                 {String(item.value).padStart(2, "0")}
               </div>
@@ -354,7 +354,7 @@ export default function Home() {
         </motion.div>
 
         <motion.button
-          className="bg-gradient-to-r from-[#4285F4] to-[#79ACFF] px-10 py-2 text-white text-lg rounded-full mt-4"
+          className="bg-gradient-to-r from-[#4285F4] to-[#79ACFF] px-10 py-2 text-white text-lg font-bold rounded-full my-8"
           initial={{ y: 100, opacity: 0 }}
           animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
           whileHover={{
@@ -375,6 +375,24 @@ export default function Home() {
         >
           Register now
         </motion.button>
+
+        <motion.img
+        src="/shaniwar-wada.svg"
+        alt=""
+        className="justify-baseline pb-4 md:hidden"
+        initial={{ y: 100, rotate: 0, opacity: 0, scale: 0.8 }}
+        animate={
+          isInView
+            ? { y: 0, rotate: 0, opacity: 1, scale: 1.2 }
+            : { y: 100, rotate: 0, opacity: 0, scale: 0.8 }
+        }
+        transition={{
+          type: "spring",
+          stiffness: 100,
+          damping: 20,
+          duration: 0.8,
+        }}
+      />
       </div>
     </div>
   );

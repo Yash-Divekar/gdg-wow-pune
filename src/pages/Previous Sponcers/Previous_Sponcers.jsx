@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import Sponsors from "./Sponcers.json";
 
 function Previous_Sponsors() {
-  const [Year, setYear] = useState("2024");
+  const [year, setYear] = useState("2024");
   const scrollRef = useRef(null);
 
   const scrollRight = () => {
@@ -19,74 +19,34 @@ function Previous_Sponsors() {
 
   return (
     <section
-      className="relative bg-red-100 py-17 px-4 min-h-screen overflow-hidden "
+      className="relative bg-red-100 py-20 sm:py-8 px-3 sm:px-4 min-h-[50vh] overflow-hidden"
       style={{ backgroundImage: "url('/Grids/grid dots.svg')" }}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col h-full">
         {/* Title */}
-        <div className="inline-block mt-5">
-          <div className="flex justify-end">
-            <h2 className="text-white text-2xl md:text-3xl font-semibold bg-red-500 px-6 py-3 rounded-full shadow-lg text-center w-[30%] mr-10">
+        <div className="inline-block mb-4 sm:mb-6">
+          <div className="flex justify-center sm:justify-end">
+            <h2 className="text-white text-base sm:text-xl md:text-2xl font-semibold bg-red-500 px-4 py-2 rounded-full shadow-lg text-center w-auto sm:w-auto sm:mr-6">
               Previous Sponsors
             </h2>
           </div>
-
-          {/* Year Buttons */}
-          <div className="flex flex-wrap justify-start h-12 ml-10">
-            <button
-              className={`ml-10 px-6 py-2 font-semibold transition duration-300 shadow-md text-xl rounded-lg ${
-                Year === "2023"
-                  ? "bg-white text-black"
-                  : "bg-black text-white hover:bg-gray-500"
-              }`}
-              onClick={() => setYear("2023")}
-            >
-              2023
-            </button>
-
-            <button
-              className={`px-6 py-2 font-semibold transition duration-300 shadow-md text-xl rounded-lg ${
-                Year === "2024"
-                  ? "bg-white text-black"
-                  : "bg-black text-white hover:bg-gray-500"
-              }`}
-              onClick={() => setYear("2024")}
-            >
-              2024
-            </button>
-          </div>
         </div>
 
-        {/* Scroll Buttons */}
-        <button
-          className="absolute left-10 top-[55%] -translate-y-1/2 p-2 rounded-full hover:scale-110 transition"
-          onClick={scrollLeft}
-        >
-          <img src="/Doddles/arrows.svg" alt="" className="h-[60px] w-auto rotate-180" />
-        </button>
-
-        <button
-          className="absolute right-10 top-[55%] -translate-y-1/2 p-2 rounded-full hover:scale-110 transition"
-          onClick={scrollRight}
-        >
-          <img src="/Doddles/arrows.svg" alt="" className="h-[60px] w-auto" />
-        </button>
-
         {/* Sponsors Grid with Custom Horizontal Scrollbar */}
-        <div className="overflow-x-auto w-full flex justify-center rounded-2xl">
+        <div className="relative overflow-x-auto w-full flex justify-center rounded-xl">
           <div
             ref={scrollRef}
-            className="flex flex-nowrap overflow-x-scroll snap-x snap-mandatory w-[90%] max-w-[1500px] rounded-2xl
-              custom-horizontal-scrollbar"
+            className="flex flex-nowrap overflow-x-scroll snap-x snap-mandatory w-full max-w-full sm:max-w-[95%] rounded-xl
+              custom-horizontal-scrollbar "
           >
-            <div className="grid grid-rows-2 grid-flow-col gap-6 bg-white p-6 md:p-10 rounded-2xl shadow-xl w-max">
-              {Sponsors[Year].map((sponsor, index) => (
+            <div className="grid grid-rows-2 xs:grid-rows-2 grid-flow-col gap-3 sm:gap-4 bg-white p-4 sm:p-6 rounded-xl shadow-xl w-max ">
+              {Sponsors[year]?.map((sponsor, index) => (
                 <div
                   key={index}
-                  className="flex flex-col items-center justify-between w-[200px] h-[200px] p-4 border border-gray-200 rounded-xl shadow-sm bg-gray-50 transition hover:shadow-lg snap-center"
+                  className="flex flex-col items-center justify-between w-[100px] h-[130px] xs:w-[120px] xs:h-[140px] sm:w-[150px] sm:h-[160px] p-2 sm:p-3 border border-gray-200 rounded-lg shadow-sm bg-gray-50 transition hover:shadow-lg snap-center"
                 >
                   {/* Image */}
-                  <div className="w-[120px] h-[120px] flex items-center justify-center rounded-xl bg-white p-2 shadow">
+                  <div className="w-[60px] xs:w-[70px] sm:w-[90px] h-[60px] xs:h-[70px] sm:h-[90px] flex items-center justify-center rounded-lg bg-white p-2 shadow">
                     <img
                       src={sponsor.logo}
                       alt={sponsor.name}
@@ -99,7 +59,7 @@ function Previous_Sponsors() {
                     href={sponsor.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-center text-sm md:text-base text-black font-semibold mt-3 px-3 py-1 border border-gray-300 rounded-lg hover:bg-gray-100 transition"
+                    className="text-center text-xs sm:text-sm text-black font-semibold mt-2 px-2 py-1 border border-gray-300 rounded-md hover:bg-gray-100 transition truncate w-full"
                   >
                     {sponsor.name}
                   </a>
@@ -107,6 +67,21 @@ function Previous_Sponsors() {
               ))}
             </div>
           </div>
+          
+          {/* Scroll Buttons - Positioned at sides for better accessibility */}
+          <button
+            className="absolute left-1 top-1/2 -translate-y-1/2 p-1 rounded-full hover:scale-110 transition hidden sm:block"
+            onClick={scrollLeft}
+          >
+            <img src="/Doddles/arrows.svg" alt="Scroll left" className="h-[40px] w-auto transform rotate-180" />
+          </button>
+          
+          <button
+            className="absolute right-1 top-1/2 -translate-y-1/2 p-1 rounded-full hover:scale-110 transition hidden sm:block"
+            onClick={scrollRight}
+          >
+            <img src="/Doddles/arrows.svg" alt="Scroll right" className="h-[40px] w-auto" />
+          </button>
         </div>
       </div>
 
@@ -114,7 +89,12 @@ function Previous_Sponsors() {
       <style jsx>{`
         /* Custom Horizontal Scrollbar */
         .custom-horizontal-scrollbar::-webkit-scrollbar {
-          height: 6px; /* Thin scrollbar */
+          height: 4px; /* Thinner scrollbar for mobile */
+        }
+        @media (min-width: 640px) {
+          .custom-horizontal-scrollbar::-webkit-scrollbar {
+            height: 6px; /* Slightly larger for desktop */
+          }
         }
         .custom-horizontal-scrollbar::-webkit-scrollbar-thumb {
           background: #ef4444; /* Red scrollbar */

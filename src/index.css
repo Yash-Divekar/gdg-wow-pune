@@ -1,9 +1,9 @@
 @import "tailwindcss";
-@import 'react-loading-skeleton/dist/skeleton.css';
 
 .speaker_shape {
-  width: 800px;
-  height: 500px;
+  width: 100%;
+  max-width: auto;
+  height: auto;
   object-fit: cover;
   
   /* Mask Image for Polygon with Rounded Corners */
@@ -11,9 +11,45 @@
   mask-image: url('/src/assets/Speaker_polygon.svg');
 
   /* Ensure the mask covers the whole image */
-  -webkit-mask-size: cover;
-  mask-size: cover;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  
+  /* Center the mask */
+  -webkit-mask-position: center;
+  mask-position: center;
 
   /* Apply smooth rounded corners */
   border-radius: 20px; 
 }
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .speaker_shape {
+    max-width: 375px;
+    height: 200px;
+    /* We're still using the same SVG, just scaling it */
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .speaker_shape {
+    max-width: 700px;
+    height: 350px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .speaker_shape {
+    width: 100%;
+    max-width: 1200px;
+    height: 500px;
+    box-sizing: border-box;
+  }
+}
+
+html, body {
+  overflow-x: hidden;
+}
+

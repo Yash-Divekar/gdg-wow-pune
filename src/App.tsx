@@ -4,7 +4,7 @@ import {Home, Previous_speaker, Previous_Sponcers , FAQ , Footer, CFS , About} f
 
 function App() {
   return (
-    <main className="font-sans">
+    <main className="font-sans w-full">
       <Navbar />
       <section id="home">
         <Home />

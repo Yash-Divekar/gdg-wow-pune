@@ -1,12 +1,62 @@
 [
-    {
-        "name": "Kartik P",
-        "description": "Google Relationship Manager",
-        "image": "/Content/Previous_Speakers/test.JPG"
-      },
-    {
-       "name": "Yash",
-        "description": "Google Relationship Manager",
-        "image": "/Content/Previous_Speakers/yash.jpeg" 
-    }
+  {
+      "name": "Akshay Kumar",
+      "description": "Tech Speaker",
+      "image": "/Content/Previous_Speakers/Akshay Kumar.JPG"
+  },
+  {
+      "name": "Amey Nerkar",
+      "description": "GoogleDevExpert Payments",
+      "image": "/Content/Previous_Speakers/Amey Nerker.JPG"
+  },
+  {
+      "name": "Anmol Nitave",
+      "description": "Tech Speaker",
+      "image": "/Content/Previous_Speakers/Anmol Nitave.JPG"
+  },
+  {
+      "name": "Faizan Akhtar",
+      "description": "Software Engineer",
+      "image": "/Content/Previous_Speakers/Faizan Akhtar.JPG"
+  },
+  {
+      "name": "Ganesh Divekar",
+      "description": "Engineering at Bajaj Finserv",
+      "image": "/Content/Previous_Speakers/ganesh Divekar.JPG"
+  },
+  {
+      "name": "Nikita Desale",
+      "description": "4x GCP Certified",
+      "image": "/Content/Previous_Speakers/Nikita Desale.JPG"
+  },
+  {
+      "name": "Pooja Bhaumik",
+      "description": "Google Developer Expert (Flutter)",
+      "image": "/Content/Previous_Speakers/Pooja bhaumik.jpg"
+  },
+  {
+      "name": "Sachin Sharma",
+      "description": "IIT Kanpur in 2006.",
+      "image": "/Content/Previous_Speakers/Sachin Sharma.JPG"
+  },
+  {
+      "name": "Shrihriday Bhagwat",
+      "description": "GDE Flutter and Dart",
+      "image": "/Content/Previous_Speakers/Shrihriday Bhagwat.JPG"
+  },
+  {
+      "name": "Sweta Dargad",
+      "description": "CISSP| Technical Trainer at Qualys",
+      "image": "/Content/Previous_Speakers/Sweta Dargad.JPG"
+  },
+  {
+      "name": "Vishal Virani",
+      "description": "Co-Founder & CEO at DhiWise",
+      "image": "/Content/Previous_Speakers/Vishal Virani.JPG"
+  },
+  {
+      "name": "Vrijrij Singh",
+      "description": "Google Developers Expert Firebase & ML",
+      "image": "/Content/Previous_Speakers/Vrijrij Singh.JPG"
+  }
 ]
