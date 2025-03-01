@@ -5,29 +5,29 @@ import { Home, Previous_speaker, Previous_Sponcers, FAQ, Footer, CFS, About, Eve
 
 function App() {
   return (
-    <main className="font-sans w-full">
+    <main className="font-sans">
       <Navbar />
       <div id="home">
         <Home />
       </div>
-      <section id="about">
+      <div id="about">
         <About />
-      </section>
-      <section id="speaker">
+      </div>
+      <div id="speaker">
         <Previous_speaker />
-      </section>
-      <section id="cfs">
+      </div>
+      <div id="cfs">
         <CFS />
-      </section>
-      <section id="sponsor">
+      </div>
+      <div id="sponsor">
         <Previous_Sponcers />
-      </section>
-      <section id="glimps">
+      </div>
+      <div id="glimps">
         <Events />
-      </section>
-      <section id="faq">
+      </div>
+      <div id="faq">
         <FAQ />
-      </section>
+      </div>
       
       <Footer />
     </main>

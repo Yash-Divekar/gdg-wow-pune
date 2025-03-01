@@ -58,8 +58,8 @@ function PreviousSponsors() {
   };
 
   return (
-    <section
-      className="relative sm:min-h-screen bg-red-100 py-25 sm:py-25 px-4 sm:px-6 md:px-8 overflow-hidden"
+    <div
+      className="relative sm:min-h-screen bg-red-100 py-25 sm:py-25 px-4 sm:px-6 md:px-8 overflow-hidden outline"
       style={{ backgroundImage: "url('/Grids/grid dots.svg')" }}
     >
       <div className="sm:px-20 flex flex-col justify-center items-center">
@@ -185,7 +185,7 @@ function PreviousSponsors() {
           scrollbar-width: none;  /* Firefox */
         }
       `}</style>
-    </section>
+    </div>
   );
 }
 

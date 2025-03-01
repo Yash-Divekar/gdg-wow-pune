@@ -133,7 +133,7 @@ export default function Home() {
   return (
     <div
       ref={ref}
-      className="relative h-screen w-full flex xl:flex-row flex-col"
+      className="relative h-screen w-full flex xl:flex-row flex-col overflow-hidden outline"
     >
       <motion.img
         src="/Grids/grid lines.png"
@@ -381,22 +381,23 @@ export default function Home() {
         </motion.button>
       </div>
       <motion.img
-        src="/shaniwar-wada.svg"
-        alt=""
-        className="flex justify-baseline xl:hidden"
-        initial={{ y: 100, rotate: 0, opacity: 0, scale: 0.8 }}
-        animate={
-          isInView
-            ? { y: 0, rotate: 0, opacity: 1, scale: 1.2 }
-            : { y: 100, rotate: 0, opacity: 0, scale: 0.8 }
-        }
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-          duration: 0.8
-        }}
-      />
+  src="/shaniwar-wada.svg"
+  alt=""
+  className="w-[80%] max-w-md mx-auto xl:hidden overflow-hidden"
+  initial={{ y: 100, opacity: 0, scale: 0.9 }}
+  animate={
+    isInView
+      ? { y: 0, opacity: 1, scale: 1.5 }
+      : { y: 100, opacity: 0, scale: 0.9 }
+  }
+  transition={{
+    type: "spring",
+    stiffness: 100,
+    damping: 20,
+    duration: 0.8
+  }}
+/>
+
     </div>
   );
 }

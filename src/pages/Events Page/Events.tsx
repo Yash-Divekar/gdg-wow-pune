@@ -96,7 +96,7 @@ function Events() {
   return (
     <div 
       ref={ref}
-      className="flex flex-col justify-center items-center w-full p-4"
+      className="flex flex-col justify-center items-center w-full p-4 outline"
     >
       {/* Title - Centered on Mobile, Left-Aligned on Desktop */}
       <motion.div 

@@ -25,7 +25,7 @@ export default function About() {
   return (
     <div 
       ref={ref} 
-      className="bg-[#E5F2FF] h-screen w-full flex flex-col pt-[10vh] lg:flex-row lg:px-0 xl:p-6 xl:p-8 xl:p-10 xl:pt-0 px-9"
+      className="bg-[#E5F2FF] h-screen w-full flex flex-col pt-[10vh] lg:flex-row lg:px-0 xl:p-6 xl:p-8 xl:p-10 xl:pt-0 px-9 outline"
     >
       {/* Left side content */}
       <div className="flex flex-col w-full xl:w-1/2 xl:w-[45%] items-center justify-center mx-auto xl:mx-0 xl:ml-4 xl:ml-10 mb-10 xl:mb-0">

@@ -11,7 +11,7 @@ export default function CFS() {
   return (
     <div
       ref={ref}
-      className="relative min-h-screen/2 xl:min-h-screen flex flex-col gap-10 px-10 xl:px-20 pb-10 xl:py-16"
+      className="relative min-h-screen/2 xl:min-h-screen flex flex-col gap-10 px-10 xl:px-20 pb-10 xl:py-16 outline"
     >
       {/* Background Grid */}
       <motion.div

@@ -1,55 +1,41 @@
 @import "tailwindcss";
 
 .speaker_shape {
-  width: 100%;
-  max-width: auto;
+  width: 90vw; /* Fills 90% of the viewport width */
   height: auto;
   object-fit: cover;
-  
-  /* Mask Image for Polygon with Rounded Corners */
-  -webkit-mask-image: url('/src/assets/Speaker_polygon.svg'); /* Chrome, Safari, Edge */
+
+  /* Apply the SVG Mask */
+  -webkit-mask-image: url('/src/assets/Speaker_polygon.svg');
   mask-image: url('/src/assets/Speaker_polygon.svg');
 
-  /* Ensure the mask covers the whole image */
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  
-  /* Center the mask */
+  -webkit-mask-size: contain;
+  mask-size: contain;
+
   -webkit-mask-position: center;
   mask-position: center;
 
-  /* Apply smooth rounded corners */
-  border-radius: 20px; 
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
 }
 
-/* Mobile styles */
+/* Mobile: Covers only 50% of the screen */
 @media (max-width: 767px) {
   .speaker_shape {
-    max-width: 375px;
-    height: 200px;
-    /* We're still using the same SVG, just scaling it */
+    width: 100vw; /* 50% screen width on mobile */
+    height: auto;
   }
 }
 
-/* Tablet styles */
+/* Tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
   .speaker_shape {
-    max-width: 700px;
-    height: 350px;
+    width: 80vw;
+    height: auto;
   }
 }
 
-/* Desktop styles */
-@media (min-width: 1024px) {
-  .speaker_shape {
-    width: 100%;
-    max-width: 1200px;
-    height: 500px;
-    box-sizing: border-box;
-  }
+.blur-effect {
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1));
 }
-
-html, body {
-  overflow-x: hidden;
-}
-
