@@ -1,14 +1,15 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import {Home, Previous_speaker, Previous_Sponcers , FAQ , Footer, CFS , About} from "./pages/index";
+import { Home, Previous_speaker, Previous_Sponcers, FAQ, Footer, CFS, About, Events} from "./pages/index";
+
 
 function App() {
   return (
     <main className="font-sans w-full">
       <Navbar />
-      <section id="home">
+      <div id="home">
         <Home />
-      </section>
+      </div>
       <section id="about">
         <About />
       </section>
@@ -21,9 +22,13 @@ function App() {
       <section id="sponsor">
         <Previous_Sponcers />
       </section>
+      <section id="glimps">
+        <Events />
+      </section>
       <section id="faq">
         <FAQ />
       </section>
+      
       <Footer />
     </main>
   );

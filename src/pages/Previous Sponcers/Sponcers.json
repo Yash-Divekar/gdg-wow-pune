@@ -1,119 +1,27 @@
-{
-    "2023": [
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      },
-      {
-        "name": "Google for Developers",
-        "logo": "/Content/Previous_Sponcers/2023/Google Developers.png",
-        "website": "https://www.google.com"
-      }
-    ],
-      "2024":[
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"},
-      {"name": "JetBrains",
-      "logo": "/Content/Previous_Sponcers/2024/JetBrains.png",
-      "website": "https://www.jetbrains.com"}
-      
-    ]
+[  
+  {
+    "name": "Google Developers",
+    "logo": "/Content/Previous_Sponcers/Google Developers.png",
+    "website": "https://www.google.com"
+  },
+  {
+    "name":"Agprop",
+    "logo" : "/Content/Previous_Sponcers/Agprop.svg",
+    "website":"#"
+  },
+  {
+    "name" : "Konfhub",
+    "logo" : "/Content/Previous_Sponcers/Konfhub.png",
+    "website":"#"
+  },
+  {
+    "name" : "languify",
+    "logo" :"/Content/Previous_Sponcers/Languify.svg",
+    "website" :"#"
+  },
+  {
+    "name" : "Worqhat",
+    "logo" :"/Content/Previous_Sponcers/Worqhat.png",
+    "website" :"#"
   }
-  
+]

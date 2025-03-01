@@ -6,13 +6,13 @@ export default function Home() {
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0,
+    seconds: 0
   });
 
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
-    margin: "-20%",
+    margin: "-20%"
   });
 
   useEffect(() => {
@@ -44,38 +44,38 @@ export default function Home() {
       initial: { y: -200, x: -50, rotate: 45, opacity: 0 },
       animate: { y: 0, x: 0, rotate: 0, opacity: 1 },
       delay: 0.2,
-      bounce: 0.6,
+      bounce: 0.6
     },
     {
       initial: { y: -150, x: 50, rotate: -30, opacity: 0 },
       animate: { y: 0, x: 0, rotate: 0, opacity: 1 },
       delay: 0.5,
-      bounce: 0.5,
+      bounce: 0.5
     },
     {
       initial: { y: -250, x: -30, rotate: 45, opacity: 0 },
       animate: { y: 0, x: 0, rotate: 45, opacity: 1 },
       delay: 0.8,
-      bounce: 0.7,
+      bounce: 0.7
     },
     {
       initial: { y: -180, x: 40, rotate: -20, opacity: 0 },
       animate: { y: 0, x: 0, rotate: 0, opacity: 1 },
       delay: 1.1,
-      bounce: 0.6,
+      bounce: 0.6
     },
     {
       initial: { y: -220, x: -20, rotate: 25, opacity: 0 },
       animate: { y: 0, x: 0, rotate: 0, opacity: 1 },
       delay: 1.4,
-      bounce: 0.5,
+      bounce: 0.5
     },
     {
       initial: { y: -160, x: 30, rotate: -35, opacity: 0 },
       animate: { y: 0, x: 0, rotate: 0, opacity: 1 },
       delay: 1.7,
-      bounce: 0.7,
-    },
+      bounce: 0.7
+    }
   ];
 
   const bounceVariants = {
@@ -86,17 +86,17 @@ export default function Home() {
       transition: {
         type: "spring",
         stiffness: 200,
-        damping: 15,
-      },
+        damping: 15
+      }
     },
     hover: {
       scale: 1.1,
       transition: {
         type: "spring",
         stiffness: 400,
-        damping: 10,
-      },
-    },
+        damping: 10
+      }
+    }
   };
 
   const countdownItems = [
@@ -105,33 +105,36 @@ export default function Home() {
       value: timeLeft.days,
       borderColor: "#0043B2",
       headerBg: "#3061B2",
-      contentBg: "#4285F4",
+      contentBg: "#4285F4"
     },
     {
       label: "Hours",
       value: timeLeft.hours,
       borderColor: "#BF0F00",
       headerBg: "#B23328",
-      contentBg: "#EA4335",
+      contentBg: "#EA4335"
     },
     {
       label: "Minutes",
       value: timeLeft.minutes,
       borderColor: "#CCA300",
       headerBg: "#B2941B",
-      contentBg: "#EABC00",
+      contentBg: "#EABC00"
     },
     {
       label: "Seconds",
       value: timeLeft.seconds,
       borderColor: "#006C1D",
       headerBg: "#2A8442",
-      contentBg: "#34A853",
-    },
+      contentBg: "#34A853"
+    }
   ];
 
   return (
-    <div ref={ref} className="relative max-h-screen flex md:flex-row flex-col-reverse outline">
+    <div
+      ref={ref}
+      className="relative h-screen w-full flex xl:flex-row flex-col"
+    >
       <motion.img
         src="/Grids/grid lines.png"
         alt=""
@@ -144,13 +147,13 @@ export default function Home() {
           type: "spring",
           stiffness: 100,
           damping: 20,
-          duration: 1,
+          duration: 1
         }}
       />
       <motion.img
         src="/Shaniwar_Wada_With_bg.png"
         alt=""
-        className="hidden sm:block sm:h-screen"
+        className="hidden xl:block xl:h-screen"
         initial={{ x: -100, rotate: -10, opacity: 0 }}
         animate={
           isInView
@@ -161,7 +164,7 @@ export default function Home() {
           type: "spring",
           stiffness: 100,
           damping: 20,
-          duration: 0.8,
+          duration: 0.8
         }}
       />
 
@@ -170,7 +173,7 @@ export default function Home() {
           key={index}
           src={`/Doddles/image_${index}.png`}
           alt=""
-          className={`absolute hidden sm:block ${
+          className={`absolute hidden xl:block ${
             index === 1
               ? "w-32 top-[15vh] left-[0.5vw]"
               : index === 2
@@ -195,7 +198,7 @@ export default function Home() {
             damping: 12,
             delay: isInView ? toddleAnimations[index - 1].delay : 0,
             bounce: toddleAnimations[index - 1].bounce,
-            duration: 1.2,
+            duration: 1.2
           }}
           whileHover={{
             scale: 1.1,
@@ -203,44 +206,41 @@ export default function Home() {
             transition: {
               rotate: {
                 repeat: Infinity,
-                duration: 2,
-              },
-            },
+                duration: 2
+              }
+            }
           }}
         />
       ))}
-
-<motion.img
-          src={`./Logo/Angle_Logo.svg`}
-          alt=""
-          className="absolute -top-30 -left-10 scale-[20%] hidden md:block"
-          initial={toddleAnimations[3].initial}
-          animate={
-            isInView
-              ? toddleAnimations[3].animate
-              : toddleAnimations[3].initial
+      <motion.img
+        src={`./Logo/Angle_Logo.svg`}
+        alt=""
+        className="absolute -top-30 -left-10 scale-[20%] hidden xl:block"
+        initial={toddleAnimations[3].initial}
+        animate={
+          isInView ? toddleAnimations[3].animate : toddleAnimations[3].initial
+        }
+        transition={{
+          type: "spring",
+          stiffness: 150,
+          damping: 12,
+          delay: isInView ? toddleAnimations[3].delay : 0,
+          bounce: toddleAnimations[3].bounce,
+          duration: 1.2
+        }}
+        whileHover={{
+          scale: 1.1,
+          rotate: [0, -5, 5, 0],
+          transition: {
+            rotate: {
+              repeat: Infinity,
+              duration: 2
+            }
           }
-          transition={{
-            type: "spring",
-            stiffness: 150,
-            damping: 12,
-            delay: isInView ? toddleAnimations[3].delay : 0,
-            bounce: toddleAnimations[3].bounce,
-            duration: 1.2,
-          }}
-          whileHover={{
-            scale: 1.1,
-            rotate: [0, -5, 5, 0],
-            transition: {
-              rotate: {
-                repeat: Infinity,
-                duration: 2,
-              },
-            },
-          }}
-        />
+        }}
+      />
 
-      <div className="md-4 text-black md:ml-auto justify-center items-center md:text-right md:mr-10 mt-[10vh] md:mt-[25vh] flex flex-col gap-4 md:items-end">
+      <div className="flex flex-col justify-center items-center text-black xl:ml-auto xl:text-right xl:mr-[10vw] pt-[15vh] xl:pt-[25vh] gap-4 xl:items-end p-5">
         <motion.h2
           initial={{ x: 100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
@@ -248,22 +248,24 @@ export default function Home() {
             type: "spring",
             stiffness: 150,
             damping: 20,
-            delay: 0.5,
+            delay: 0.5
           }}
         >
-          <span className="text-basic md:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
+          <h4 className="text-basic sm:text-lg md:text-xl xl:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
             Google Developer Groups on Campus पुणे
-          </span>
+          </h4>
           <br />
-          <span className="text-sm md:text-xl flex justify-center md:justify-end">Presents</span>
+          <span className="text-sm md:text-basic lg:text-lg xl:text-xl flex justify-center xl:justify-end">
+            Presents
+          </span>
         </motion.h2>
-          
-        <div className="relative flex justify-center items-center">
+
+        <div className="flex justify-center items-center w-full xl:justify-end relative">
           {/* Main Image */}
           <motion.img
             src="./Logo/Wow_without_circle.svg"
-            alt=""
-            className="md:w-[30vw] w-6/7"
+            alt="WOW Logo"
+            className="xl:w-[30vw] w-[80%]"
             initial={{ scale: 0, rotate: -10, opacity: 0 }}
             animate={
               isInView
@@ -274,15 +276,15 @@ export default function Home() {
               type: "spring",
               stiffness: 200,
               damping: 15,
-              delay: 0.7,
+              delay: 0.7
             }}
           />
 
-          {/* Overlay Circle */}
+          {/* Overlay Circle (Properly Centered for XL Screens) */}
           <motion.img
             src="./Logo/Circle.svg"
-            alt=""
-            className="w-1/7 md:w-[5vw] absolute top-[50%] left-[52%] -translate-x-1/2 -translate-y-1/2"
+            alt="Rotating Circle"
+            className="w-[12%] xl:w-[15%] m-[0.5%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             initial={{ scale: 0, rotate: -10, opacity: 0 }}
             animate={
               isInView
@@ -293,20 +295,19 @@ export default function Home() {
               type: "spring",
               stiffness: 200,
               damping: 15,
-              delay: 0.7,
+              delay: 0.7
             }}
             whileInView={{
               rotate: [0, 360],
-              transition: { repeat: Infinity, duration: 5, ease: "linear" },
+              transition: { repeat: Infinity, duration: 5, ease: "linear" }
             }}
           />
         </div>
 
-
         <motion.img
           src="/pune_slogan.png"
           alt=""
-          className="w-2/3 sm:w-[24vw]"
+          className="w-2/3 xl:w-[24vw]"
           initial={{ scale: 0, rotate: 10, opacity: 0 }}
           animate={
             isInView
@@ -317,12 +318,12 @@ export default function Home() {
             type: "spring",
             stiffness: 200,
             damping: 15,
-            delay: 0.9,
+            delay: 0.9
           }}
         />
 
         <motion.div
-          className="text-white text-center flex flex-row gap-3 sm:gap-8"
+          className="text-white text-center flex flex-row gap-3 xl:gap-8"
           initial={{ scale: 0.8, opacity: 0 }}
           animate={
             isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
@@ -332,7 +333,7 @@ export default function Home() {
           {countdownItems.map((item, index) => (
             <motion.div
               key={item.label}
-              className="rounded-xl overflow-clip w-17 sm:w-20 font-semibold "
+              className="rounded-xl overflow-clip w-17 xl:w-20 font-semibold "
               style={{ border: `1px solid ${item.borderColor}` }}
               variants={bounceVariants}
               initial="initial"
@@ -340,12 +341,15 @@ export default function Home() {
               whileHover="hover"
               transition={{ delay: isInView ? 1.1 + index * 0.1 : 0 }}
             >
-              <div style={{ backgroundColor: item.headerBg }} className="p-2 text-sm sm:text-basic items-center justify-center">
+              <div
+                style={{ backgroundColor: item.headerBg }}
+                className="p-2 text-sm xl:text-basic items-center justify-center"
+              >
                 {item.label}
               </div>
               <div
                 style={{ backgroundColor: item.contentBg }}
-                className="py-3 text-lg sm:text-2xl"
+                className="py-3 text-lg xl:text-2xl"
               >
                 {String(item.value).padStart(2, "0")}
               </div>
@@ -362,24 +366,24 @@ export default function Home() {
             transition: {
               type: "spring",
               stiffness: 400,
-              damping: 10,
-            },
+              damping: 10
+            }
           }}
           whileTap={{ scale: 0.9 }}
           transition={{
             type: "spring",
             stiffness: 200,
             damping: 15,
-            delay: 1.5,
+            delay: 1.5
           }}
         >
           Register now
         </motion.button>
-
-        <motion.img
+      </div>
+      <motion.img
         src="/shaniwar-wada.svg"
         alt=""
-        className="justify-baseline pb-4 md:hidden"
+        className="flex justify-baseline xl:hidden"
         initial={{ y: 100, rotate: 0, opacity: 0, scale: 0.8 }}
         animate={
           isInView
@@ -390,10 +394,9 @@ export default function Home() {
           type: "spring",
           stiffness: 100,
           damping: 20,
-          duration: 0.8,
+          duration: 0.8
         }}
       />
-      </div>
     </div>
   );
 }

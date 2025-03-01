@@ -5,6 +5,7 @@ import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer"
 import About from "./About"
 import CFS from "./CFS"
+import Events from "./Events page/Events"
 
 export {
   Home,
@@ -13,5 +14,6 @@ export {
   FAQ,
   Footer,
   About,
-  CFS
+  CFS,
+  Events
 }

@@ -3,11 +3,12 @@ import { Link } from "react-scroll";
 export default function Navbar() {
   return (
     <div className="fixed font-sans flex flex-row justify-center gap-2 
-  top-1/30 sm:top-20 
-  right-1/2 sm:right-10 
-  z-40 
-  w-[90%] sm:w-auto 
-  left-1/2 sm:left-auto transform -translate-x-1/2 sm:translate-x-0">
+z-[100] 
+w-[90%] lg:w-auto 
+mt-[5%]
+left-1/2 lg:left-auto transform -translate-x-1/2 lg:translate-x-0
+lg:right-0 lg:mr-[1%]
+">
 
       <a
         href="#home"
@@ -27,6 +28,9 @@ export default function Navbar() {
         </Link>
         <Link to="sponsor" smooth={true} duration={600} className="cursor-pointer">
           Sponsor
+        </Link>
+        <Link to="glimps" smooth={true} duration={600} className="cursor-pointer">
+          Glimps
         </Link>
         <Link to="faq" smooth={true} duration={600} className="cursor-pointer">
           FAQ

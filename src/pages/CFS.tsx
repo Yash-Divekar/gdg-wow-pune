@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 export default function CFS() {
@@ -11,7 +11,7 @@ export default function CFS() {
   return (
     <div
       ref={ref}
-      className="relative min-h-screen/2 sm:min-h-screen flex flex-col gap-10 px-10 md:px-20 pb-10 sm:py-16"
+      className="relative min-h-screen/2 xl:min-h-screen flex flex-col gap-10 px-10 xl:px-20 pb-10 xl:py-16"
     >
       {/* Background Grid */}
       <motion.div
@@ -41,19 +41,19 @@ export default function CFS() {
         initial={{ x: -50, opacity: 0 }}
         animate={isInView ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
         transition={{ type: "spring", bounce: 0.4, duration: 1 }}
-        className="text-center md:text-left"
+        className="text-center xl:text-left"
       >
-        <h2 className="text-[#34A853] text-3xl md:text-5xl font-bold">
+        <h2 className="text-[#34A853] text-3xl xl:text-5xl font-bold">
           Call for Speakers
         </h2>
-        <p className="text-lg md:text-2xl mt-2">Join the WOW revolution.</p>
+        <p className="text-lg xl:text-2xl mt-2">Join the WOW revolution.</p>
       </motion.div>
 
       {/* Floating Images */}
       <motion.img
         src="/Doddles/image_15.png"
         alt=""
-        className="absolute left-4/9 sm:left-2/5 -rotate-30 bottom-[5vh] w-1/3 sm:w-28 md:w-56 -translate-x-[calc(50%+10rem)] z-20"
+        className="absolute left-4/9 xl:left-2/5 -rotate-30 bottom-[5vh] w-1/3 xl:w-28 xl:w-56 -translate-x-[calc(50%+10rem)] z-20"
         initial={{ y: 100, rotate: -30, scale: 0.8, opacity: 0 }}
         animate={
           isInView
@@ -65,7 +65,7 @@ export default function CFS() {
       <motion.img
         src="/Doddles/image_16.png"
         alt=""
-        className="absolute left-2/6 sm:left-1/2 -rotate-20 bottom-[10vh] w-1/6 sm:w-24 md:w-40 translate-x-[calc(50%+10rem)] z-20 sm:z-0"
+        className="absolute left-2/6 xl:left-1/2 -rotate-20 bottom-[10vh] w-1/6 xl:w-24 xl:w-40 translate-x-[calc(50%+10rem)] z-20 xl:z-0"
         initial={{ y: 100, rotate: 15, scale: 0.8, opacity: 0 }}
         animate={
           isInView
@@ -77,7 +77,7 @@ export default function CFS() {
 
       {/* Call to Action Section */}
       <motion.div
-        className="relative flex flex-col items-center text-center gap-5 mx-auto bg-white px-6 md:px-20 py-10 md:py-20 rounded-2xl border border-black w-full md:w-[40vw] shadow-2xl z-10"
+        className="relative flex flex-col items-center text-center gap-5 mx-auto bg-white px-6 xl:px-20 py-10 xl:py-20 rounded-2xl border border-black w-full xl:w-[40vw] shadow-2xl z-10"
         initial={{ y: 50, scale: 0.95, opacity: 0 }}
         animate={
           isInView
@@ -86,16 +86,16 @@ export default function CFS() {
         }
         transition={{ type: "spring", bounce: 0.4, duration: 1 }}
       >
-        <h2 className="text-3xl md:text-5xl font-sans font-bold bg-gradient-to-r from-[#EA4335] to-[#0046B9] text-transparent bg-clip-text">
+        <h2 className="text-3xl xl:text-5xl font-sans font-bold bg-gradient-to-r from-[#EA4335] to-[#0046B9] text-transparent bg-clip-text">
           Your Voice Matters
         </h2>
-        <p className="text-sm md:text-base">
+        <p className="text-sm xl:text-base">
           Share your extraordinary journey and inspire the next generation of
           innovators. Your unique perspective could spark the next technological
           revolution.
         </p>
         <motion.button
-          className="bg-gradient-to-r from-[#4285F4] to-[#79ACFF] px-6 md:px-10 py-2 text-white text-basic sm:text-lg rounded-full mt-4"
+          className="bg-gradient-to-r from-[#4285F4] to-[#79ACFF] px-6 xl:px-10 py-2 text-white text-basic xl:text-lg rounded-full mt-4"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
@@ -106,7 +106,7 @@ export default function CFS() {
         <motion.img
           src="/Doddles/image_13.png"
           alt=""
-          className="absolute -top-4 left-1/12 sm:left-0 w-1/3 sm:w-32 md:w-56 -translate-x-1/2 z-20"
+          className="absolute -top-4 left-1/12 xl:left-0 w-1/3 xl:w-32 xl:w-56 -translate-x-1/2 z-20"
           initial={{ y: -100, rotate: 15, scale: 0.8, opacity: 0 }}
           animate={
             isInView
@@ -118,7 +118,7 @@ export default function CFS() {
         <motion.img
           src="/Doddles/image_14.png"
           alt=""
-          className="absolute top-0 right-0 w-1/3 sm:w-32 md:w-56 translate-x-1/2 -translate-y-1/2 z-20"
+          className="absolute top-0 right-0 w-1/3 xl:w-32 xl:w-56 translate-x-1/2 -translate-y-1/2 z-20"
           initial={{ y: -100, rotate: -15, scale: 0.8, opacity: 0 }}
           animate={
             isInView
