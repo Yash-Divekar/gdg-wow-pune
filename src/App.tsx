@@ -5,7 +5,7 @@ import { Home, Previous_speaker, Previous_Sponcers, FAQ, Footer, CFS, About, Eve
 
 function App() {
   return (
-    <main className="font-sans">
+    <main className="font-sans overflow-x-hidden w-full min-h-screen">
       <Navbar />
       <div id="home">
         <Home />
