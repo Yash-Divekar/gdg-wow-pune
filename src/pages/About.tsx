@@ -25,12 +25,12 @@ export default function About() {
   return (
     <div 
       ref={ref} 
-      className="bg-[#E5F2FF] h-screen w-full flex flex-col pt-[10vh] lg:flex-row lg:px-0 xl:p-6 xl:p-8 xl:p-10 xl:pt-0 px-9 outline"
+      className="bg-[#E5F2FF] h-full min-h-screen w-full flex flex-col gap-10 pt-[12vh] lg:flex-row lg:px-[10vh] p-10 outline"
     >
       {/* Left side content */}
-      <div className="flex flex-col w-full xl:w-1/2 xl:w-[45%] items-center justify-center mx-auto xl:mx-0 xl:ml-4 xl:ml-10 mb-10 xl:mb-0">
+      <div className="relative z-20 flex flex-col w-full h-full lg:w-1/2 items-center justify-center mx-auto xl:mx-0 xl:ml-10 mb-10 xl:mb-0">
         <motion.div
-          className="bg-[#4285F4] border border-black text-white font-semibold px-8 py-2 text-center text-lg  xl:text-lg xl:text-xl rounded-full w-fit mb-4"
+          className="bg-[#4285F4] border border-black text-white font-semibold px-8 py-2 text-center text-lg sm:text-xl rounded-full w-fit mb-2 sm:-mb-5 z-30"
           initial={{ scale: 0.5, opacity: 0 }}
           animate={
             isInView ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }
@@ -44,7 +44,7 @@ export default function About() {
           About GDGOC WOW
         </motion.div>
         <motion.div
-          className="relative bg-white border-2 border-[#4285F4] rounded-2xl px-5 xl:px-8 xl:px-12 xl:px-16 py-6 xl:py-7 xl:py-8 xl:py-10 flex flex-col gap-4 xl:gap-5 xl:gap-6 xl:gap-7 text-xs xl:text-sm xl:text-base xl:text-lg w-full max-w-xl"
+          className="relative bg-white border-2 border-[#4285F4] rounded-2xl px-5 xl:px-8 xl:px-12 xl:px-16 py-6 xl:py-7 xl:py-8 xl:py-10 flex flex-col gap-4 xl:gap-5 xl:gap-6 xl:gap-7 text-xs sm:text-base xl:text-base xl:text-lg w-full max-w-xl"
           initial={{ y: 50, scale: 0.95, opacity: 0 }}
           animate={
             isInView
@@ -134,12 +134,13 @@ export default function About() {
       </div>
 
       {/* Puzzle piece stats - matching the mobile layout from the image */}
-      <div className="grid grid-cols-2 gap-4 w-full mt-6 xl:w-1/2 xl:h-1/7 xl:pt-20 xl:m-5 xl:mt-15 px-4 xl:px-0 pb-8 xl:pb-0 " id="puzzle">
-        <div className="relative">
+      <div className="flex justify-center items-center">
+      <div className="grid grid-cols-2 gap-4 w-full md:w-[50vw] " id="puzzle">
+        <div className="relative ">
           <motion.img
             src="/Doddles/image_9.png"
             alt="Doodle illustration showing 10000+ Participants"
-            className="w-full max-w-[140px] xl:max-w-[160px] xl:max-w-[180px] xl:max-w-[200px] mx-auto"
+            className="w-[35vw] md:w-[20vw] lg:w-[15vw] xl:w-[13vw] mx-auto"
             initial={{ y: -50, scale: 0.9, opacity: 0 }}
             animate={
               isInView
@@ -160,7 +161,7 @@ export default function About() {
           <motion.img
             src="/Doddles/image_10.png"
             alt="Doodle illustration showing 25+ Sessions"
-            className="w-full max-w-[120px] xl:max-w-[160px] xl:max-w-[180px] xl:max-w-[200px] mx-auto"
+            className="w-[35vw] md:w-[20vw] lg:w-[15vw] xl:w-[13vw] mx-auto"
             initial={{ y: -50, scale: 0.9, opacity: 0 }}
             animate={
               isInView
@@ -181,7 +182,7 @@ export default function About() {
           <motion.img
             src="/Doddles/image_11.png"
             alt="Doodle illustration showing 35+ Speakers"
-            className="w-full max-w-[140px] xl:max-w-[160px] xl:max-w-[180px] xl:max-w-[200px] mx-auto"
+            className="w-[35vw] md:w-[20vw] lg:w-[15vw] xl:w-[13vw] mx-auto"
             initial={{ y: 50, scale: 0.9, opacity: 0 }}
             animate={
               isInView
@@ -202,7 +203,7 @@ export default function About() {
           <motion.img
             src="/Doddles/image_12.png"
             alt="Doodle illustration showing 2 Days"
-            className="w-full max-w-[140px] pr-5 xl:max-w-[160px] xl:max-w-[180px] xl:max-w-[200px] mx-auto"
+            className="w-[35vw] md:w-[20vw] lg:w-[15vw] xl:w-[13vw] mx-auto"
             initial={{ y: 50, scale: 0.9, opacity: 0 }}
             animate={
               isInView
@@ -218,6 +219,7 @@ export default function About() {
             whileHover={{ scale: 1.05 }}
           />
         </div>
+      </div>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ function FAQ() {
     };
 
     return (
-        <section className="py-10 px-4 md:py-16 md:px-8 lg:px-12 bg-green-200 outline">
+        <section className="py-10 px-4 md:py-16 md:px-8 lg:px-12 bg-green-200">
             {/* Header section */}
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col items-start">

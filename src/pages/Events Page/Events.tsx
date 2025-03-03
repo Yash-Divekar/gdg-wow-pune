@@ -96,7 +96,7 @@ function Events() {
   return (
     <div 
       ref={ref}
-      className="flex flex-col justify-center items-center w-full p-4 outline"
+      className="flex flex-col justify-center items-center w-full p-4"
     >
       {/* Title - Centered on Mobile, Left-Aligned on Desktop */}
       <motion.div 
@@ -117,7 +117,7 @@ function Events() {
 
       {/* Grid Container - Full screen height on desktop, 1.5x height on mobile */}
       <motion.div 
-        className="grid max-w-screen-xl w-full h-[150vh] lg:h-screen 
+        className="grid max-w-screen-xl w-full h-[150vh] md:h-[250vh] lg:h-screen 
                     grid-cols-2 lg:grid-cols-5 grid-rows-7 lg:grid-rows-3 gap-3"
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}

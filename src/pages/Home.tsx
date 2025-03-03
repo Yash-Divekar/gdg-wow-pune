@@ -133,7 +133,7 @@ export default function Home() {
   return (
     <div
       ref={ref}
-      className="relative h-screen w-full flex xl:flex-row flex-col overflow-hidden outline"
+      className="relative h-screen w-full flex xl:flex-row flex-col overflow-hidden"
     >
       <motion.img
         src="/Grids/grid lines.png"
@@ -240,7 +240,8 @@ export default function Home() {
         }}
       />
 
-      <div className="flex flex-col justify-center items-center text-black xl:ml-auto xl:text-right xl:mr-[10vw] pt-[15vh] xl:pt-[25vh] gap-4 xl:items-end p-5">
+      <div className="flex flex-col md:flex-row xl:flex-col justify-center items-center text-black xl:ml-auto xl:text-right xl:mr-[5vw] pt-[10vh] xl:pt-[15vh] gap-2 xl:items-end">
+        <div className="flex justify-center xl:justify-end items-center xl:items-end flex-col md:flex-col xl:flex-rows text-center xl:text-right md:pt-10 lg:pt-0">
         <motion.h2
           initial={{ x: 100, opacity: 0 }}
           animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
@@ -254,13 +255,12 @@ export default function Home() {
           <h4 className="text-basic sm:text-lg md:text-xl xl:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
             Google Developer Groups on Campus पुणे
           </h4>
-          <br />
-          <span className="text-sm md:text-basic lg:text-lg xl:text-xl flex justify-center xl:justify-end">
+          <p className="text-sm md:text-basic lg:text-lg xl:text-xl flex justify-center xl:justify-end">
             Presents
-          </span>
+          </p>
         </motion.h2>
 
-        <div className="flex justify-center items-center w-full xl:justify-end relative">
+        <div className="flex justify-center items-center xl:justify-end relative">
           {/* Main Image */}
           <motion.img
             src="./Logo/Wow_without_circle.svg"
@@ -284,7 +284,7 @@ export default function Home() {
           <motion.img
             src="./Logo/Circle.svg"
             alt="Rotating Circle"
-            className="w-[12%] xl:w-[15%] m-[0.5%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            className="w-[12%] xl:w-[15%] m-[0.5%] xl:m-[0.6%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
             initial={{ scale: 0, rotate: -10, opacity: 0 }}
             animate={
               isInView
@@ -299,7 +299,7 @@ export default function Home() {
             }}
             whileInView={{
               rotate: [0, 360],
-              transition: { repeat: Infinity, duration: 5, ease: "linear" }
+              transition: { repeat:Infinity ,duration: 5, ease: "linear" }
             }}
           />
         </div>
@@ -321,7 +321,8 @@ export default function Home() {
             delay: 0.9
           }}
         />
-
+        </div>
+        <div className="flex justify-center items-center flex-col md:flex-col xl:flex-rows text-center xl:text-right md:p-5 xl:p-0">
         <motion.div
           className="text-white text-center flex flex-row gap-3 xl:gap-8"
           initial={{ scale: 0.8, opacity: 0 }}
@@ -379,11 +380,15 @@ export default function Home() {
         >
           Register now
         </motion.button>
+        </div>
       </div>
       <motion.img
   src="/shaniwar-wada.svg"
   alt=""
-  className="w-[80%] max-w-md mx-auto xl:hidden overflow-hidden"
+  className="w-[80%] max-w-md mt-5 mx-auto 
+  md:scale-120 md:absolute md:bottom-0 md:left-1/2 md:transform md:-translate-x-1/2 md:-z-10
+  lg:scale-160 lg:bottom-[-5vh]
+  xl:hidden"
   initial={{ y: 100, opacity: 0, scale: 0.9 }}
   animate={
     isInView

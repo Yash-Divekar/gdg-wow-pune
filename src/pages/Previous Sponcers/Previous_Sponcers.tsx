@@ -59,7 +59,7 @@ function PreviousSponsors() {
 
   return (
     <div
-      className="relative sm:min-h-screen bg-red-100 py-25 sm:py-25 px-4 sm:px-6 md:px-8 overflow-hidden outline"
+      className="relative lg:min-h-screen bg-red-100 py-25 sm:py-25 px-4 sm:px-6 md:px-8 overflow-hidden"
       style={{ backgroundImage: "url('/Grids/grid dots.svg')" }}
     >
       <div className="sm:px-20 flex flex-col justify-center items-center">
@@ -173,7 +173,7 @@ function PreviousSponsors() {
       </div>
 
       {/* CSS for custom scrollbar behavior */}
-      <style jsx>{`
+      <style>{`
         /* Hide scrollbar for Chrome, Safari and Opera */
         .scrollbar-hide::-webkit-scrollbar {
           display: none;

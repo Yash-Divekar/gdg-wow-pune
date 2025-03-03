@@ -1,5 +1,5 @@
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar2";
 import { Home, Previous_speaker, Previous_Sponcers, FAQ, Footer, CFS, About, Events} from "./pages/index";
 
 
@@ -10,6 +10,7 @@ function App() {
       <div id="home">
         <Home />
       </div>
+      
       <div id="about">
         <About />
       </div>
@@ -22,7 +23,7 @@ function App() {
       <div id="sponsor">
         <Previous_Sponcers />
       </div>
-      <div id="glimps">
+      <div id="glimpses">
         <Events />
       </div>
       <div id="faq">
@@ -30,6 +31,8 @@ function App() {
       </div>
       
       <Footer />
+
+      
     </main>
   );
 }
