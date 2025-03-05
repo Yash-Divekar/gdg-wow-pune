@@ -17,7 +17,7 @@ export default function Footer() {
             <a href="#" className="hover:text-gray-400">
               About GDGoC Program
             </a>
-            <a href="#" className="hover:text-gray-400">
+            <a href="#faq" className="hover:text-gray-400">
               FAQ
             </a>
             <a href="#" className="hover:text-gray-400">
@@ -30,23 +30,19 @@ export default function Footer() {
         </div>
 
         {/* Right Section - Social Icons */}
-        <div className=" flex space-x-6 sm:space-x-8 mt-2 sm:mt-0 text-xl sm:text-2xl justify-center">
-          <FontAwesomeIcon
-            icon={faEnvelope}
-            className="cursor-pointer hover:text-gray-400"
-          />
-          <FontAwesomeIcon
-            icon={faLinkedin}
-            className="cursor-pointer hover:text-gray-400"
-          />
-          <FontAwesomeIcon
-            icon={faInstagram}
-            className="cursor-pointer hover:text-gray-400"
-          />
-          <FontAwesomeIcon
-            icon={faTwitter}
-            className="cursor-pointer hover:text-gray-400"
-          />
+        <div className="flex space-x-6 sm:space-x-8 mt-2 sm:mt-0 text-xl sm:text-2xl justify-center">
+          <a href="mailto:gdgocwowpune@gmail.com" className="cursor-pointer hover:text-gray-400">
+            <FontAwesomeIcon icon={faEnvelope} />
+          </a>
+          <a href="https://www.linkedin.com/company/gdsc-pune" className="cursor-pointer hover:text-gray-400">
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+          <a href="https://www.instagram.com/gdgoc.pune/" className="cursor-pointer hover:text-gray-400">
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a href="https://x.com/GDSCPune" className="cursor-pointer hover:text-gray-400">
+            <FontAwesomeIcon icon={faTwitter} />
+          </a>
         </div>
       </div>
 

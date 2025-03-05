@@ -49,14 +49,14 @@ function PreviousSponsors() {
 
   const scrollRight = () => {
     if (scrollRef.current) {
-      const scrollAmount = Math.min(scrollRef.current.clientWidth * 0.8, 300);
+      const scrollAmount = Math.min(scrollRef.current.clientWidth * 2, maxScroll / 4); // Increased scroll amount
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   };
 
   const scrollLeft = () => {
     if (scrollRef.current) {
-      const scrollAmount = Math.min(scrollRef.current.clientWidth * 0.8, 300);
+      const scrollAmount = Math.min(scrollRef.current.clientWidth * 2, maxScroll / 4); // Increased scroll amount
       scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     }
   };
@@ -88,42 +88,12 @@ function PreviousSponsors() {
   return (
     <motion.div
       ref={sectionRef}
-      className="relative lg:min-h-screen bg-red-100 py-25 sm:py-25 px-4 sm:px-6 md:px-8 overflow-hidden"
+      className="relative min-h-screen h-full bg-red-100 py-[10vh] px-[5vw] overflow-hidden"
       style={{ backgroundImage: "url('/Grids/grid dots.svg')" }}
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Decorative Element */}
-      <motion.img
-        src="/Doddles/sponsor-doodle.svg"
-        alt=""
-        className="absolute -top-20 -right-10 scale-[25%] hidden xl:block"
-        initial={{ scale: 0.2, opacity: 0, rotate: -10 }}
-        animate={
-          isInView 
-          ? { scale: 0.25, opacity: 0.7, rotate: 0 } 
-          : { scale: 0.2, opacity: 0, rotate: -10 }
-        }
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 12,
-          delay: isInView ? 0.3 : 0,
-          bounce: 0.25,
-          duration: 1.2
-        }}
-        whileHover={{
-          scale: 0.28,
-          rotate: [0, -5, 5, 0],
-          transition: {
-            rotate: {
-              repeat: Infinity,
-              duration: 2
-            }
-          }
-        }}
-      />
 
       <div className="sm:px-20 flex flex-col justify-center items-center">
         {/* Title */}
@@ -226,7 +196,8 @@ function PreviousSponsors() {
                   >
                     <motion.img 
                       src="/Doddles/arrows.svg" 
-                      alt="" 
+                      alt="Scroll left"
+                      loading="lazy"
                       className="h-8 w-8 transform rotate-180"
                       whileHover={{
                         x: -2,
@@ -257,7 +228,8 @@ function PreviousSponsors() {
                   >
                     <motion.img 
                       src="/Doddles/arrows.svg" 
-                      alt="" 
+                      alt="Scroll right"
+                      loading="lazy"
                       className="h-8 w-8"
                       whileHover={{
                         x: 2,
@@ -276,7 +248,7 @@ function PreviousSponsors() {
               style={{ WebkitOverflowScrolling: 'touch' }}
             >
               <motion.div 
-                className="grid grid-flow-col auto-cols-max gap-4 sm:gap-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg mx-auto"
+                className="grid grid-rows-2 grid-flow-col auto-cols-max gap-4 sm:gap-6 bg-white p-4 sm:p-6 rounded-xl shadow-lg mx-auto"
                 variants={containerVariants}
                 initial="hidden"
                 animate={isInView ? "visible" : "hidden"}
@@ -287,7 +259,7 @@ function PreviousSponsors() {
                   return (
                     <motion.div
                       key={index}
-                      className="flex flex-col items-center justify-between w-[160px] h-[180px] xs:w-[180px] xs:h-[200px] sm:w-[200px] sm:h-[230px] md:w-[220px] md:h-[250px] lg:w-[240px] lg:h-[280px] p-3 sm:p-4 border border-gray-200 rounded-lg shadow-sm bg-gray-50 transition-all hover:shadow-md hover:bg-gray-100 snap-center"
+                      className="flex flex-col items-center justify-between w-[120px] h-[140px] xs:w-[140px] xs:h-[160px] sm:w-[160px] sm:h-[180px] md:w-[180px] md:h-[200px] lg:w-[180px] lg:h-[200px] p-3 sm:p-4 border border-gray-200 rounded-lg shadow-sm bg-gray-50 transition-all hover:shadow-md hover:bg-gray-100 snap-center"
                       variants={itemVariants}
                       custom={index}
                       whileHover={{ 
@@ -299,7 +271,7 @@ function PreviousSponsors() {
                     >
                       {/* Image container */}
                       <motion.div 
-                        className="w-[100px] xs:w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] h-[100px] xs:h-[120px] sm:h-[140px] md:h-[160px] lg:h-[180px] flex items-center justify-center rounded-lg bg-white p-3 sm:p-4 md:p-5 shadow"
+                        className="w-[90%] h-[90%] flex items-center justify-center rounded-lg bg-white p-3 sm:p-4 md:p-5 shadow"
                         whileHover={{ 
                           scale: 1.03,
                           transition: { duration: 0.3 }

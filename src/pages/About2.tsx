@@ -25,10 +25,10 @@ function About2() {
   return (
     <div
       ref={ref}
-      className="min-h-screen h-full lg:h-screen w-full flex flex-col lg:flex-row justify-center items-center py-5 pt-[10vh] lg:pt-[5vh] xl:pt-0 bg-[#E5F2FF] gap-10 lg:gap-10 md:overflow-hidden lg:overflow-auto"
+      className="min-h-screen h-full lg:h-screen w-full flex flex-col lg:flex-row justify-center items-center py-5 pt-[10vh] lg:pt-[5vh] xl:pt-0 bg-[#E5F2FF] gap-10 lg:gap-10 md:overflow-hidden lg:overflow-auto p-4"
     >
       <div className="relative h-full w-full flex justify-center items-center ">
-        <div className="relative bg-white rounded-2xl border border-[#4285F4] flex justify-center items-center lg:w-[40vw] lg:h-[60vh] md:h-[50vh] md:w-[80vw] h-[50vh] w-[80vw]">
+        <div className="relative bg-white rounded-2xl border border-[#4285F4] flex justify-center items-center lg:w-[40vw] lg:h-[60vh] md:h-[50vh] md:w-[80vw] min-h-[40vh] h-fit w-[80vw]">
           <motion.div
             className="absolute top-[-4vh] bg-[#4285F4] border border-black text-white font-semibold px-8 py-2 text-center text-base sm:text-lg rounded-full"
             initial={{ scale: 0.5, opacity: 0 }}
@@ -48,7 +48,7 @@ function About2() {
             <motion.img
               src="/Doddles/image_7.png"
               alt=""
-              className="absolute left-0 top-0 h-[18vh] md:h-[30vh] -translate-x-1/2 -translate-y-1/6"
+              className="absolute left-0 top-0 h-[16vh] md:h-[30vh] -translate-x-1/2 -translate-y-1/6"
               initial={{ y: -100, rotate: -15, scale: 0.8, opacity: 0 }}
               animate={
                 isInView
@@ -105,7 +105,7 @@ function About2() {
             <motion.img
               src="/Doddles/image_8.png"
               alt=""
-              className="absolute h-[18vh] md:h-[30vh] bottom-0 right-0 translate-x-1/2 translate-y-1/6"
+              className="absolute h-[16vh] md:h-[30vh] bottom-0 right-0 translate-x-1/2 translate-y-1/6"
               initial={{ y: 100, rotate: 15, scale: 0.8, opacity: 0 }}
               animate={
                 isInView

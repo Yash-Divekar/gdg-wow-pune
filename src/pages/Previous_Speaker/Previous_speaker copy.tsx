@@ -1,51 +1,47 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import speakersData from "./Speakers.json";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function PreviousSpeaker() {
   const [currentSpeaker, setCurrentSpeaker] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState({});
+  const [imagesLoaded, setImagesLoaded] = useState<{ [key: number]: boolean }>({});
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
-  // Preload all images on component mount
+  // Preload the first image immediately and then load the rest
   useEffect(() => {
-    const preloadAllImages = async () => {
-      const loadedStatus = { ...imagesLoaded };
-      
-      // Create an array of promises to load all images
-      const loadPromises = speakersData.map((speaker, index) => {
-        return new Promise((resolve) => {
-          const img = new Image();
-          img.src = speaker.image;
-          img.onload = () => {
-            loadedStatus[index] = true;
-            resolve();
-          };
-          img.onerror = () => {
-            loadedStatus[index] = false;
-            resolve();
-          };
-        });
+    const loadImage = (index: number) => {
+      return new Promise<void>((resolve) => {
+        const img = new Image();
+        img.src = speakersData[index].image;
+        img.onload = () => {
+          setImagesLoaded((prev) => ({ ...prev, [index]: true }));
+          resolve();
+        };
+        img.onerror = () => {
+          setImagesLoaded((prev) => ({ ...prev, [index]: false }));
+          resolve();
+        };
       });
-      
-      // Wait for all images to load or fail
-      await Promise.all(loadPromises);
-      setImagesLoaded(loadedStatus);
     };
-    
-    preloadAllImages();
+
+    const preloadImages = async () => {
+      // Load the first image immediately
+      await loadImage(0);
+
+      // Load the remaining images in the background
+      const remainingImages = speakersData.slice(1).map((_, index) => loadImage(index + 1));
+      await Promise.all(remainingImages);
+    };
+
+    preloadImages();
   }, []);
-  
+
   // Set up the image cycling timer
   useEffect(() => {
     const interval = setInterval(() => {
-      // Only cycle to next speaker if that image is loaded
       setCurrentSpeaker((prev) => {
         const next = (prev + 1) % speakersData.length;
-        // If next image is loaded, go to it, otherwise stay on current
         return imagesLoaded[next] ? next : prev;
       });
     }, 5000);
@@ -55,7 +51,7 @@ function PreviousSpeaker() {
   // Text animation variants
   const textVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (custom) => ({
+    visible: (custom: number) => ({
       opacity: 1,
       y: 0,
       transition: {
@@ -69,7 +65,7 @@ function PreviousSpeaker() {
   return (
     <div
       ref={ref}
-      className="relative xl:p-30 flex items-center justify-center h-[50vh] md:h-screen"
+      className="relative xl:p-30 flex items-center justify-center min-h-[50vh] h-full md:h-screen"
     >
       {/* Background Image */}
       <motion.img
@@ -97,7 +93,7 @@ function PreviousSpeaker() {
               <motion.div
                 className="absolute top-[-2vh] md:top-[-5vh] left-[25vw] md:left-[20vw] lg:left-[30vw] xl:left-[20vw] w-[30vw] md:w-[30vw] lg:w-[20vw] text-center text-sm md:text-lg xl:text-2xl font-semibold py-1 xl:py-2 bg-blue-200 outline-2 md:outline-3 outline-blue-500 text-blue-500 rounded-4xl z-10 shadow-lg"
                 initial={{ y: "200%", scale: 1.5, opacity: 1 }}
-                animate={isInView ? {y: "100%", scale: 1, opacity: 1 } : {}}
+                animate={isInView ? { y: "100%", scale: 1, opacity: 1 } : {}}
                 transition={{ type: "spring", duration: 2 }}
               >
                 Previous Speaker
@@ -123,24 +119,22 @@ function PreviousSpeaker() {
 
               {/* Speaker Image with Pre-loaded Images */}
               <AnimatePresence mode="wait">
-                <motion.div 
+                <motion.div
                   key={currentSpeaker}
-                  className="w-full"
+                  className="w-full z-10"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0.8 }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
-                >
-                  {/* Don't use lazy loading since we're preloading all images */}
+                > 
                   <img
                     src={speakersData[currentSpeaker].image}
                     alt={speakersData[currentSpeaker].name}
-                    className="speaker_shape z-10"
+                    className="speaker_shape"
                     style={{ visibility: imagesLoaded[currentSpeaker] ? 'visible' : 'hidden' }}
                   />
                 </motion.div>
               </AnimatePresence>
-
               <div className="z-20">
                 <motion.img
                   src="/Doddles/Green_Quote.png"
@@ -160,7 +154,7 @@ function PreviousSpeaker() {
                 />
               </div>
 
-              <motion.div 
+              <motion.div
                 className="hidden lg:block lg:absolute lg:bottom-10 lg:right-5 bg-red-500 lg:w-[25vw] rounded-lg p-3"
                 initial={{ y: 20, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : {}}
@@ -168,7 +162,7 @@ function PreviousSpeaker() {
               >
                 <AnimatePresence mode="wait">
                   <motion.div key={`desktop-${currentSpeaker}`}>
-                    <motion.h3 
+                    <motion.h3
                       className="text-center text-sm lg:text-xl font-semibold"
                       custom={3}
                       variants={textVariants}
@@ -177,13 +171,13 @@ function PreviousSpeaker() {
                     >
                       {speakersData[currentSpeaker].name}
                     </motion.h3>
-                    <motion.hr 
+                    <motion.hr
                       custom={4}
                       variants={textVariants}
                       initial="hidden"
                       animate="visible"
                     />
-                    <motion.p 
+                    <motion.p
                       className="text-center text-xs lg:text-base"
                       custom={2}
                       variants={textVariants}
@@ -197,7 +191,7 @@ function PreviousSpeaker() {
               </motion.div>
             </div>
           </div>
-          <motion.div 
+          <motion.div
             className="bg-red-500 w-[60vw] rounded-lg p-3 mt-2 lg:hidden"
             initial={{ y: 20, opacity: 0 }}
             animate={isInView ? { y: 0, opacity: 1 } : {}}
@@ -205,7 +199,7 @@ function PreviousSpeaker() {
           >
             <AnimatePresence mode="wait">
               <motion.div key={`mobile-${currentSpeaker}`}>
-                <motion.h3 
+                <motion.h3
                   className="text-center text-basic md:text-xl lg:text-2xl font-semibold"
                   custom={0}
                   variants={textVariants}
@@ -214,13 +208,13 @@ function PreviousSpeaker() {
                 >
                   {speakersData[currentSpeaker].name}
                 </motion.h3>
-                <motion.hr 
+                <motion.hr
                   custom={1}
                   variants={textVariants}
                   initial="hidden"
                   animate="visible"
                 />
-                <motion.p 
+                <motion.p
                   className="text-center text-xs md:text-lg lg:text-lg"
                   custom={2}
                   variants={textVariants}

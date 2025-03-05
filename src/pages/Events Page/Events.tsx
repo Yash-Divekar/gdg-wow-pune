@@ -37,7 +37,7 @@ function Events() {
   const imageVariants = {
     topImages: {
       hidden: { y: -50, scale: 0.9, opacity: 0 },
-      visible: (delay) => ({
+      visible: (delay: number) => ({
         y: 0,
         scale: 1,
         opacity: 1,
@@ -51,7 +51,7 @@ function Events() {
     },
     bottomImages: {
       hidden: { y: 50, scale: 0.9, opacity: 0 },
-      visible: (delay) => ({
+      visible: (delay: number) => ({
         y: 0,
         scale: 1,
         opacity: 1,
@@ -65,7 +65,7 @@ function Events() {
     },
     leftImages: {
       hidden: { x: -50, scale: 0.9, opacity: 0 },
-      visible: (delay) => ({
+      visible: (delay: number) => ({
         x: 0,
         scale: 1,
         opacity: 1,
@@ -79,7 +79,7 @@ function Events() {
     },
     rightImages: {
       hidden: { x: 50, scale: 0.9, opacity: 0 },
-      visible: (delay) => ({
+      visible: (delay: number) => ({
         x: 0,
         scale: 1,
         opacity: 1,
@@ -130,7 +130,7 @@ function Events() {
           custom={0.2}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 1.png" alt="Glimps 1" className="w-full h-full object-cover object-top" />
+          <img src="./Content/Glimps/image 1.png" alt="Glimps 1" className="w-full h-full object-cover object-top"  loading="lazy"/>
         </motion.div>
 
         {/* Image 2 */}
@@ -140,7 +140,7 @@ function Events() {
           custom={0.3}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 2.png" alt="Glimps 2" className="w-full h-full object-cover" />
+          <img src="./Content/Glimps/image 2.png" alt="Glimps 2" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 3 */}
@@ -150,7 +150,7 @@ function Events() {
           custom={0.4}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 3.png" alt="Glimps 3" className="w-full h-full object-cover" />
+          <img src="./Content/Glimps/image 3.png" alt="Glimps 3" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 4 */}
@@ -160,7 +160,7 @@ function Events() {
           custom={0.5}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 4.png" alt="Glimps 4" className="w-full h-full object-cover" />
+          <img src="./Content/Glimps/image 4.png" alt="Glimps 4" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 5 */}
@@ -170,7 +170,7 @@ function Events() {
           custom={0.6}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 5.png" alt="Glimps 5" className="w-full h-full object-cover" />
+          <img src="./Content/Glimps/image 5.png" alt="Glimps 5" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 6 */}
@@ -180,7 +180,7 @@ function Events() {
           custom={0.7}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 6.png" alt="Glimps 6" className="w-full h-full object-cover object-top" />
+          <img src="./Content/Glimps/image 6.png" alt="Glimps 6" className="w-full h-full object-cover object-top" loading="lazy" />
         </motion.div>
 
         {/* Image 7 */}
@@ -190,7 +190,7 @@ function Events() {
           custom={0.8}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 7.png" alt="Glimps 7" className="w-full h-full object-cover object-bottom" />
+          <img src="./Content/Glimps/image 7.png" alt="Glimps 7" className="w-full h-full object-cover object-bottom" loading="lazy" />
         </motion.div>
 
         {/* Image 8 */}
@@ -200,7 +200,7 @@ function Events() {
           custom={0.9}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 8.png" alt="Glimps 8" className="w-full h-full object-cover" />
+          <img src="./Content/Glimps/image 8.png" alt="Glimps 8" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
       </motion.div>
     </div>

@@ -1,27 +1,162 @@
-[  
+[
   {
     "name": "Google Developers",
     "logo": "/Content/Previous_Sponcers/Google Developers.png",
     "website": "https://www.google.com"
   },
   {
-    "name":"Agprop",
-    "logo" : "/Content/Previous_Sponcers/Agprop.svg",
-    "website":"#"
+    "name": "Agprop",
+    "logo": "/Content/Previous_Sponcers/Agprop.svg",
+    "website": "#"
   },
   {
-    "name" : "Konfhub",
-    "logo" : "/Content/Previous_Sponcers/Konfhub.png",
-    "website":"#"
+    "name": "Konfhub",
+    "logo": "/Content/Previous_Sponcers/Konfhub.png",
+    "website": "#"
   },
   {
-    "name" : "languify",
-    "logo" :"/Content/Previous_Sponcers/Languify.svg",
-    "website" :"#"
+    "name": "Languify",
+    "logo": "/Content/Previous_Sponcers/Languify.svg",
+    "website": "#"
   },
   {
-    "name" : "Worqhat",
-    "logo" :"/Content/Previous_Sponcers/Worqhat.png",
-    "website" :"#"
+    "name": "Worqhat",
+    "logo": "/Content/Previous_Sponcers/Worqhat.png",
+    "website": "#"
+  },
+  {
+    "name": "Airmeet",
+    "logo": "/Content/Previous_Sponcers/Airmeet.png",
+    "website": "#"
+  },
+  {
+    "name": "AlgoZenith",
+    "logo": "/Content/Previous_Sponcers/AlgoZenith.png",
+    "website": "#"
+  },
+  {
+    "name": "Tezos",
+    "logo": "/Content/Previous_Sponcers/Tezos.png",
+    "website": "#"
+  },
+  {
+    "name": "Builders Tribe",
+    "logo": "/Content/Previous_Sponcers/buildersTribe.png",
+    "website": "#"
+  },
+  {
+    "name": "Developer Circles",
+    "logo": "/Content/Previous_Sponcers/developerCircle.png",
+    "website": "#"
+  },
+  {
+    "name": "Devfolio",
+    "logo": "/Content/Previous_Sponcers/devfolio.png",
+    "website": "#"
+  },
+  {
+    "name": "Virtual Cyber Labs",
+    "logo": "/Content/Previous_Sponcers/VirtualCyberLabs.png",
+    "website": "#"
+  },
+  {
+    "name": "DigitalOcean",
+    "logo": "/Content/Previous_Sponcers/DigitalOcean.png",
+    "website": "#"
+  },
+  {
+    "name": "echoAR",
+    "logo": "/Content/Previous_Sponcers/echoAR.png",
+    "website": "#"
+  },
+  {
+    "name": "egghead.io",
+    "logo": "/Content/Previous_Sponcers/egghead.io.png",
+    "website": "#"
+  },
+  {
+    "name": "Taskade",
+    "logo": "/Content/Previous_Sponcers/taskade.png",
+    "website": "#"
+  },
+  {
+    "name": "FlutterFlow",
+    "logo": "/Content/Previous_Sponcers/FlutterFlow.png",
+    "website": "#"
+  },
+  {
+    "name": "GeeksforGeeks",
+    "logo": "/Content/Previous_Sponcers/GeeksforGeeks.png",
+    "website": "#"
+  },
+  {
+    "name": "Modernizing Processes",
+    "logo": "/Content/Previous_Sponcers/Modernizing.png",
+    "website": "#"
+  },
+  {
+    "name": "JetBrains",
+    "logo": "/Content/Previous_Sponcers/jetBrains.png",
+    "website": "#"
+  },
+  {
+    "name": "Jovian.ml",
+    "logo": "/Content/Previous_Sponcers/jovian.ml.png",
+    "website": "#"
+  },
+  {
+    "name": "Strikingly",
+    "logo": "/Content/Previous_Sponcers/strikingly.png",
+    "website": "#"
+  },
+  {
+    "name": "Matic",
+    "logo": "/Content/Previous_Sponcers/Matic.png",
+    "website": "#"
+  },
+  {
+    "name": "Manning",
+    "logo": "/Content/Previous_Sponcers/MANNING.png",
+    "website": "#"
+  },
+  {
+    "name": "Zulip",
+    "logo": "/Content/Previous_Sponcers/Zulip.png",
+    "website": "#"
+  },
+  {
+    "name": "Prospera",
+    "logo": "/Content/Previous_Sponcers/prospera.png",
+    "website": "#"
+  },
+  {
+    "name": "Orkes",
+    "logo": "/Content/Previous_Sponcers/orkes.png",
+    "website": "#"
+  },
+  {
+    "name": "Progate",
+    "logo": "/Content/Previous_Sponcers/progate.png",
+    "website": "#"
+  },
+  {
+    "name": "Aspecta",
+    "logo": "/Content/Previous_Sponcers/Aspecta.png",
+    "website": "#"
+  },
+  {
+    "name": "StreamYard",
+    "logo": "/Content/Previous_Sponcers/StreamYard.png",
+    "website": "#"
+  },
+  {
+    "name": "Scaler Edge",
+    "logo": "/Content/Previous_Sponcers/Scaler.png",
+    "website": "#"
+  },
+  {
+    "name": "Sketch",
+    "logo": "/Content/Previous_Sponcers/Sketch.png",
+    "website": "#"
   }
 ]

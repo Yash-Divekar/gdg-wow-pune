@@ -9,7 +9,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed font-sans top-4 z-40 w-full px-4 lg:px-0">
+    <nav className="fixed font-sans top-4 xl:top-10 z-40 w-full px-4 lg:px-0">
       {/* Desktop Navbar */}
       <div className="hidden lg:flex flex-row justify-end pr-10 gap-2 
         right-1/2 lg:right-10

@@ -5,7 +5,7 @@ import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer"
 import About from "./About2"
 import CFS from "./CFS2"
-import Events from "./Events page/Events"
+import Events from "./Events Page/Events";
 
 export {
   Home,

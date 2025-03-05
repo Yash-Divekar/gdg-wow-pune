@@ -36,37 +36,7 @@ function FAQ() {
             ref={sectionRef}
             className="py-10 px-4 md:py-16 md:px-8 lg:px-12 bg-green-200 relative overflow-hidden"
         >
-            {/* Decorative Element Animation */}
-            <motion.img
-                src="/Doddles/faq-doodle.svg"
-                alt=""
-                className="absolute -bottom-20 -right-10 scale-[25%] hidden xl:block"
-                initial={{ scale: 0.2, opacity: 0, rotate: -10 }}
-                animate={
-                    isInView 
-                    ? { scale: 0.25, opacity: 0.7, rotate: 0 } 
-                    : { scale: 0.2, opacity: 0, rotate: -10 }
-                }
-                transition={{
-                    type: "spring",
-                    stiffness: 150,
-                    damping: 12,
-                    delay: isInView ? 0.3 : 0,
-                    bounce: 0.25,
-                    duration: 1.2
-                }}
-                whileHover={{
-                    scale: 0.28,
-                    rotate: [0, -5, 5, 0],
-                    transition: {
-                        rotate: {
-                            repeat: Infinity,
-                            duration: 2
-                        }
-                    }
-                }}
-            />
-
+            
             {/* Header section */}
             <div className="max-w-7xl mx-auto">
                 <motion.div 
@@ -152,7 +122,8 @@ function FAQ() {
                                     <h4 className="px-2 sm:px-3 md:px-5">{Item.Question}</h4>
                                     <motion.img
                                         src="/Doddles/arrows.svg"
-                                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0"
+                                        loading='lazy'
+                                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 rotate-90"
                                         animate={{ 
                                             rotate: openIndex === index ? 180 : 0,
                                             scale: openIndex === index ? 1.1 : 1
@@ -229,7 +200,7 @@ function FAQ() {
                 >
                     <p className='text-sm sm:text-base md:text-lg'>Have more Questions?</p>
                     <motion.a 
-                        href="mailto:yashdivekar19@gmail.com" 
+                        href="mailto:gdgocwowpune@gmail.com" 
                         className='text-sm sm:text-base md:text-lg bg-green-500 text-white py-2 px-5 sm:py-3 sm:px-7 rounded-full font-semibold hover:bg-green-600 transition-colors'
                         whileHover={{ 
                             scale: 1.05,
@@ -290,10 +261,10 @@ function FAQ() {
                             >
                                 <div className="flex gap-5 sm:gap-7 justify-center">
                                     {[
-                                        { Icon: FaEnvelope, href: "mailto:contact@gdgocpune.com" },
-                                        { Icon: FaLinkedin, href: "https://www.linkedin.com" },
-                                        { Icon: FaInstagram, href: "https://www.instagram.com" },
-                                        { Icon: FaTwitter, href: "https://www.twitter.com" }
+                                        { Icon: FaEnvelope, href: "mailto:gdgocwowpune@gmail.com" },
+                                        { Icon: FaLinkedin, href: "https://www.linkedin.com/company/gdsc-pune" },
+                                        { Icon: FaInstagram, href: "https://www.instagram.com/gdgoc.pune/" },
+                                        { Icon: FaTwitter, href: "https://x.com/GDSCPune" }
                                     ].map((item, index) => (
                                         <motion.a 
                                             key={index}
@@ -323,6 +294,7 @@ function FAQ() {
                                 <motion.img 
                                     src="/Logo/Main_wow_logo.svg" 
                                     alt="WOW Pune Logo" 
+                                    loading='lazy'
                                     className='w-32 sm:w-36 md:w-40 mt-3 md:mt-4'
                                     initial={{ scale: 0, rotate: -10, opacity: 0 }}
                                     animate={

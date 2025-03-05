@@ -11,7 +11,7 @@ function CFS2() {
   return (
     <div
       ref={ref}
-      className="relative flex items-center justify-center h-[50vh] md:h-screen p-2 pb-10 overflow-x-clip"
+      className="relative flex items-center justify-center min-h-[50vh] h-full md:h-screen p-9 pb-10 overflow-x-clip"
     >
       {/* Background Grid */}
       <motion.img
@@ -23,9 +23,9 @@ function CFS2() {
         transition={{ type: "spring", stiffness: 100, damping: 20, duration: 1.5, ease: "easeInOut" }}
         style={{
           WebkitMaskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
+            "linear-gradient(to bottom,rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%)",
           maskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%)",
+            "linear-gradient(to bottom,rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0) 100%)",
         }}
       />
 
@@ -45,7 +45,7 @@ function CFS2() {
       
 
         <div className="flex justify-center items-center">
-          <div className="relative flex justify-center mt-[5vh] h-[30vh] md:h-[50vh] xl:h-[60vh] w-[90vw] sm:w-[70vw] xl:w-[50vw]">
+          <div className="relative flex justify-center mt-[5vh] h-[30vh] md:h-[50vh] xl:h-[60vh] w-[80vw] sm:w-[70vw] xl:w-[50vw]">
             <motion.div 
               className="h-full w-full relative flex flex-col items-center justify-center text-center gap-2 md:gap-5 mx-auto bg-white rounded-2xl border border-black shadow-2xl z-10 p-6 md:p-20"
               initial={{ y: 50, scale: 0.95, opacity: 0 }}
@@ -84,7 +84,7 @@ function CFS2() {
             </motion.div>
 
             <motion.div 
-              className="absolute bottom-[-4vh] right-[-4vw] sm:bottom-[-8vh] sm:right-[-6vw] w-[10vh] sm:w-[15vw] md:w-[15vw] lg:w-[13vw] xl:w-[12vw] z-20 md:z-0 -rotate-20"
+              className="absolute bottom-[-4vh] right-[-4vw] sm:bottom-[-8vh] sm:right-[-6vw] w-[10vh] sm:w-[15vw] md:w-[13vw] lg:w-[13vw] xl:w-[12vw] z-20 md:z-0 -rotate-20"
               initial={{ y: 100, rotate: 15, scale: 0.8, opacity: 0 }}
               animate={isInView ? { y: 0, rotate: -20, scale: 1, opacity: 1 } : { y: 100, rotate: 15, scale: 0.8, opacity: 0 }}
               transition={{ type: "spring", bounce: 0.4, duration: 1.5, delay: 0.8 }}
