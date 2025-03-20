@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import doodle from "./doodle.json";
 
-export default function Home() {
+export default function Home1() {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -54,7 +55,7 @@ export default function Home() {
     },
     {
       initial: { y: -250, x: -30, rotate: 45, opacity: 0 },
-      animate: { y: 0, x: 0, rotate: 45, opacity: 1 },
+      animate: { y: 0, x: 0, rotate: 0, opacity: 1 },
       delay: 0.8,
       bounce: 0.7
     },
@@ -133,13 +134,13 @@ export default function Home() {
   return (
     <div
       ref={ref}
-      className="relative min-h-screen h-full w-full flex xl:flex-row flex-col overflow-hidden"
+      className="relative min-h-screen h-full w-full flex overflow-hidden"
     >
       <motion.img
-        src="/Grids/grid lines.png"
-        alt=""
+        src={doodle.Line_Grid.src} // Dynamic source
+        alt={doodle.Line_Grid.alt || "Background Grid"}
         fetchPriority="high"
-        className="absolute -z-10 h-screen w-screen"
+        className="absolute -z-10 min-h-screen w-screen"
         initial={{ scale: 1.2, opacity: 0 }}
         animate={
           isInView ? { scale: 1, opacity: 1 } : { scale: 1.2, opacity: 0 }
@@ -151,266 +152,277 @@ export default function Home() {
           duration: 1
         }}
       />
-      <motion.img
-        src="/Shaniwar_Wada_With_bg.png"
-        alt=""
-        fetchPriority="high"
-        className="hidden xl:block xl:h-screen"
-        initial={{ x: -100, rotate: -10, opacity: 0 }}
-        animate={
-          isInView
-            ? { x: 0, rotate: 0, opacity: 1 }
-            : { x: -100, rotate: -10, opacity: 0 }
-        }
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-          duration: 0.8
-        }}
-      />
 
-      {[1, 2, 3, 4, 5, 6].map((index) => (
-        <motion.img
-          key={index}
-          src={`/Doddles/image_${index}.png`}
-          alt=""
-          fetchPriority="high"
-          className={`absolute hidden xl:block ${
-            index === 1
-              ? "w-32 top-[15vh] left-[0.5vw]"
-              : index === 2
-              ? "w-32 top-[15vh] left-[8vw]"
-              : index === 3
-              ? "w-28 top-[27vh] -left-[2vw]"
-              : index === 4
-              ? "w-40 top-[40vh] left-[15vw]"
-              : index === 5
-              ? "w-20 top-[42vh] left-[7vw]"
-              : "w-20 top-[43vh] left-[1vw]"
-          }`}
-          initial={toddleAnimations[index - 1].initial}
-          animate={
-            isInView
-              ? toddleAnimations[index - 1].animate
-              : toddleAnimations[index - 1].initial
-          }
-          transition={{
-            type: "spring",
-            stiffness: 150,
-            damping: 12,
-            delay: isInView ? toddleAnimations[index - 1].delay : 0,
-            bounce: toddleAnimations[index - 1].bounce,
-            duration: 1.2
-          }}
-          whileHover={{
-            scale: 1.1,
-            rotate: [0, -5, 5, 0],
-            transition: {
-              rotate: {
-                repeat: Infinity,
-                duration: 2
-              }
+      <div className=" h-auto w-full flex xl:flex-row flex-col">
+        <div className="relative h-auto left-0">
+          <motion.img
+            src={doodle.Shaniwarwada_with_bg.src}
+            alt={doodle.Shaniwarwada_with_bg.alt } 
+           fetchPriority="high"
+            className="hidden xl:block xl:h-screen"
+            initial={{ x: -100, rotate: -10, opacity: 0 }}
+            animate={
+              isInView
+                ? { x: 0, rotate: 0, opacity: 1 }
+                : { x: -100, rotate: -10, opacity: 0 }
             }
-          }}
-        />
-      ))}
-      <motion.img
-        src={`./Logo/Angle_Logo.svg`}
-        alt=""
-        fetchPriority="high"
-        className="absolute -top-30 -left-10 scale-[20%] hidden xl:block"
-        initial={toddleAnimations[3].initial}
-        animate={
-          isInView ? toddleAnimations[3].animate : toddleAnimations[3].initial
-        }
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 12,
-          delay: isInView ? toddleAnimations[3].delay : 0,
-          bounce: toddleAnimations[3].bounce,
-          duration: 1.2
-        }}
-        whileHover={{
-          scale: 1.1,
-          rotate: [0, -5, 5, 0],
-          transition: {
-            rotate: {
-              repeat: Infinity,
-              duration: 2
-            }
-          }
-        }}
-      />
+            transition={{
+              type: "spring",
+              stiffness: 100,
+              damping: 20,
+              duration: 0.8
+            }}
+          />
 
-      <div className="flex flex-col md:flex-row  xl:flex-col justify-center items-center p-5 text-black xl:ml-auto xl:text-right xl:mr-[5vw] pt-[15vh] xl:pt-[15vh] gap-2 xl:items-end">
-        <div className="flex justify-center xl:justify-end items-center xl:items-end flex-col md:flex-col xl:flex-rows text-center xl:text-right md:pt-10 lg:pt-0">
-          <motion.h2
-            initial={{ x: 100, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+          {[1, 2, 3, 4, 5, 6].map((index) => {
+            const imageKey = `image_${index}` as keyof typeof doodle; // Explicitly tell TypeScript this is a valid key
+
+            return (
+              <motion.img
+                key={index}
+                src={doodle[imageKey]?.src || "/fallback.png"} // Use src instead of link
+                alt={doodle[imageKey]?.alt || "Doodle Image"}
+                className={`absolute hidden xl:block ${
+                  index === 1
+                    ? "w-[9vw] top-[7%] left-[2%]"
+                    : index === 2
+                    ? "w-[8vw] top-[10%] left-[23%]"
+                    : index === 3
+                    ? "w-[7vw] top-[20%] -left-[5%]"
+                    : index === 4
+                    ? "w-[9vw] top-[39%] left-[40%]"
+                    : index === 5
+                    ? "w-[6vw] top-[41%] left-[20%]"
+                    : "w-[6vw] top-[40%] left-[1%]"
+                }`}
+                initial={toddleAnimations[index - 1].initial}
+                animate={
+                  isInView
+                    ? toddleAnimations[index - 1].animate
+                    : toddleAnimations[index - 1].initial
+                }
+                transition={{
+                  type: "spring",
+                  stiffness: 150,
+                  damping: 12,
+                  delay: isInView ? toddleAnimations[index - 1].delay : 0,
+                  bounce: toddleAnimations[index - 1].bounce,
+                  duration: 1.2
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: [0, -5, 5, 0],
+                  transition: {
+                    rotate: {
+                      repeat: Infinity,
+                      duration: 1.5
+                    }
+                  }
+                }}
+              />
+            );
+          })}
+
+          <motion.img
+            src={doodle.Angle_Logo.src}
+            alt={doodle.Angle_Logo.alt } 
+           fetchPriority="high"
+            className="absolute top-0 left-[25%] scale-[40%] hidden xl:block"
+            initial={toddleAnimations[3].initial}
+            animate={
+              isInView
+                ? toddleAnimations[3].animate
+                : toddleAnimations[3].initial
+            }
             transition={{
               type: "spring",
               stiffness: 150,
-              damping: 20,
-              delay: 0.5
+              damping: 12,
+              delay: isInView ? toddleAnimations[3].delay : 0,
+              bounce: toddleAnimations[3].bounce,
+              duration: 1.2
             }}
-          >
-            <h4 className="text-basic sm:text-lg md:text-xl xl:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
-              Google Developer Groups on Campus पुणे
-            </h4>
-            <p className="text-sm md:text-basic lg:text-lg xl:text-xl flex justify-center xl:justify-end">
-              Presents
-            </p>
-          </motion.h2>
-          <div className="flex flex-col justify-center items-center">
-            <div className="flex justify-center items-center xl:justify-end relative">
-              {/* Main Image */}
-              <motion.img
-                src="./Logo/Wow_without_circle.svg"
-                alt="WOW Logo"
-                fetchPriority="high"
-                className="xl:w-[30vw] w-[80%]"
-                initial={{ scale: 0, rotate: -10, opacity: 0 }}
-                animate={
-                  isInView
-                    ? { scale: 1, rotate: 0, opacity: 1 }
-                    : { scale: 0, rotate: -10, opacity: 0 }
+            whileHover={{
+              scale: 1.1,
+              rotate: [0, -5, 5, 0],
+              transition: {
+                rotate: {
+                  repeat: Infinity,
+                  duration: 2
                 }
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 15,
-                  delay: 0.7
-                }}
-              />
+              }
+            }}
+          />
+        </div>
 
-              {/* Overlay Circle (Properly Centered for XL Screens) */}
+        <div className="flex flex-col sm:flex-row  xl:flex-col justify-center items-center p-5 text-black xl:ml-auto xl:text-right xl:mr-[5vw] pt-[15vh] xl:pt-[15vh] gap-2 xl:items-center">
+          <div className="flex justify-center xl:justify-end items-center xl:items-end flex-col md:flex-col xl:flex-rows text-center xl:text-right md:pt-10 lg:pt-0">
+            <motion.h2
+              initial={{ x: 100, opacity: 0 }}
+              animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 150,
+                damping: 20,
+                delay: 0.5
+              }}
+            >
+              <h4 className="text-basic sm:text-lg md:text-xl xl:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
+                Google Developer Groups on Campus पुणे
+              </h4>
+              <p className="text-sm md:text-basic lg:text-lg xl:text-xl flex justify-center xl:justify-end">
+                Presents
+              </p>
+            </motion.h2>
+            <div className="flex flex-col justify-center items-center">
+              <div className="flex justify-center items-center xl:justify-end relative">
+                {/* Main Image */}
+                <motion.img
+                  src={doodle.WOW_Without_Circle.src}
+                  alt={doodle.WOW_Without_Circle.alt } 
+                 fetchPriority="high"
+                  className="xl:w-[30vw] w-[80%]"
+                  initial={{ scale: 0, rotate: -10, opacity: 0 }}
+                  animate={
+                    isInView
+                      ? { scale: 1, rotate: 0, opacity: 1 }
+                      : { scale: 0, rotate: -10, opacity: 0 }
+                  }
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 15,
+                    delay: 0.7
+                  }}
+                />
+
+                {/* Overlay Circle (Properly Centered for XL Screens) */}
+                <motion.img
+                  src={doodle.Circle.src}
+                  alt={doodle.Circle.alt } 
+                 fetchPriority="high"
+                  className="w-[13%] xl:w-[17%] absolute top-[51.5%] left-[51.8%] lg:top-[50.2%] lg:left-[52.3%] transform -translate-x-1/2 -translate-y-1/2"
+                  initial={{ scale: 0, rotate: -10, opacity: 0 }}
+                  animate={
+                    isInView
+                      ? { scale: 1, rotate: 0, opacity: 1 }
+                      : { scale: 0, rotate: -10, opacity: 0 }
+                  }
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 15,
+                    delay: 0.7
+                  }}
+                  whileInView={{
+                    rotate: [0, 360],
+                    transition: { repeat: Infinity, duration: 5, ease: "linear" }
+                  }}
+                />
+              </div>
+
               <motion.img
-                src="./Logo/Circle.svg"
-                alt="Rotating Circle"
-                fetchPriority="high"
-                className="w-[12%] xl:w-[15%] m-[0.5%] xl:m-[0.7%] lg:ml-[0.7%] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
-                initial={{ scale: 0, rotate: -10, opacity: 0 }}
+                src={doodle.Pune_Slogan.src}
+                alt={doodle.Pune_Slogan.alt } 
+               fetchPriority="high"
+                className="w-2/3 xl:w-[24vw]"
+                initial={{ scale: 0, rotate: 10, opacity: 0 }}
                 animate={
                   isInView
                     ? { scale: 1, rotate: 0, opacity: 1 }
-                    : { scale: 0, rotate: -10, opacity: 0 }
+                    : { scale: 0, rotate: 10, opacity: 0 }
                 }
                 transition={{
                   type: "spring",
                   stiffness: 200,
                   damping: 15,
-                  delay: 0.7
-                }}
-                whileInView={{
-                  rotate: [0, 360],
-                  transition: { repeat: Infinity, duration: 5, ease: "linear" }
+                  delay: 0.9
                 }}
               />
             </div>
-
-            <motion.img
-              src="/pune_slogan.png"
-              alt=""
-              fetchPriority="high"
-              className="w-2/3 xl:w-[24vw]"
-              initial={{ scale: 0, rotate: 10, opacity: 0 }}
+          </div>
+          <div className="flex justify-center items-center flex-col md:flex-col xl:flex-rows text-center xl:text-right md:p-5 xl:pt-0 md:pt-10 xl:p-0">
+            <motion.div
+              className="text-white text-center flex flex-row gap-3 xl:gap-8"
+              initial={{ scale: 0.8, opacity: 0 }}
               animate={
-                isInView
-                  ? { scale: 1, rotate: 0, opacity: 1 }
-                  : { scale: 0, rotate: 10, opacity: 0 }
+                isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
               }
+              transition={{ delay: 1.1 }}
+            >
+              {countdownItems.map((item, index) => (
+                <motion.div
+                  key={item.label}
+                  className="rounded-xl overflow-clip w-17 xl:w-20 font-semibold "
+                  style={{ border: `1px solid ${item.borderColor}` }}
+                  variants={bounceVariants}
+                  initial="initial"
+                  animate={isInView ? "animate" : "initial"}
+                  whileHover="hover"
+                  transition={{ delay: isInView ? 1.1 + index * 0.1 : 0 }}
+                >
+                  <div
+                    style={{ backgroundColor: item.headerBg }}
+                    className="p-2 text-sm xl:text-basic items-center justify-center"
+                  >
+                    {item.label}
+                  </div>
+                  <div
+                    style={{ backgroundColor: item.contentBg }}
+                    className="py-3 text-lg xl:text-2xl"
+                  >
+                    {String(item.value).padStart(2, "0")}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.button
+              className="bg-gradient-to-r from-[#4285F4] to-[#79ACFF] px-10 py-2 text-white text-lg font-bold rounded-full my-8 border-1 border-black shadow-2xl"
+              initial={{ y: 100, opacity: 0 }}
+              animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
+              whileHover={{
+                scale: 1.1,
+                transition: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10
+                }
+              }}
+              whileTap={{ scale: 0.9 }}
               transition={{
                 type: "spring",
                 stiffness: 200,
                 damping: 15,
-                delay: 0.9
+                delay: 1.5
               }}
-            />
+            >
+              Register now
+            </motion.button>
           </div>
         </div>
-        <div className="flex justify-center items-center flex-col md:flex-col xl:flex-rows text-center xl:text-right md:p-5 xl:pt-0 md:pt-10 xl:p-0">
-          <motion.div
-            className="text-white text-center flex flex-row gap-3 xl:gap-8"
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={
-              isInView ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0 }
-            }
-            transition={{ delay: 1.1 }}
-          >
-            {countdownItems.map((item, index) => (
-              <motion.div
-                key={item.label}
-                className="rounded-xl overflow-clip w-17 xl:w-20 font-semibold "
-                style={{ border: `1px solid ${item.borderColor}` }}
-                variants={bounceVariants}
-                initial="initial"
-                animate={isInView ? "animate" : "initial"}
-                whileHover="hover"
-                transition={{ delay: isInView ? 1.1 + index * 0.1 : 0 }}
-              >
-                <div
-                  style={{ backgroundColor: item.headerBg }}
-                  className="p-2 text-sm xl:text-basic items-center justify-center"
-                >
-                  {item.label}
-                </div>
-                <div
-                  style={{ backgroundColor: item.contentBg }}
-                  className="py-3 text-lg xl:text-2xl"
-                >
-                  {String(item.value).padStart(2, "0")}
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.button
-            className="bg-gradient-to-r from-[#4285F4] to-[#79ACFF] px-10 py-2 text-white text-lg font-bold rounded-full my-8"
-            initial={{ y: 100, opacity: 0 }}
-            animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-            whileHover={{
-              scale: 1.1,
-              transition: {
-                type: "spring",
-                stiffness: 400,
-                damping: 10
-              }
-            }}
-            whileTap={{ scale: 0.9 }}
-            transition={{
-              type: "spring",
-              stiffness: 200,
-              damping: 15,
-              delay: 1.5
-            }}
-          >
-            Register now
-          </motion.button>
-        </div>
-      </div>
-      <motion.img
-        src="/shaniwar-wada.svg"
-        alt=""
-        fetchPriority="high"
-        className="w-[80%] max-w-md mt-5 mx-auto pb-8 scale-110
-  md:scale-140 absolute bottom-0 left-1/2 transform -translate-x-1/2 md:-z-10
+        <motion.img
+          src={doodle.Shaniwarwada.src}
+          alt={doodle.Shaniwarwada.alt } 
+         fetchPriority="high"
+          className="w-[80%] max-w-md mt-5 mx-auto scale-110
+  absolute bottom-0 left-1/2 transform -translate-x-1/2
   lg:scale-160 lg:bottom-[-5vh]
-  xl:hidden"
-        initial={{ y: 100, opacity: 0, scale: 0.9 }}
-        animate={
-          isInView
-            ? { y: 0, opacity: 1, scale: 1.5 }
-            : { y: 100, opacity: 0, scale: 0.9 }
-        }
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 20,
-          duration: 0.8
-        }}
-      />
+  xl:hidden z-[-10]"
+          initial={{ y: 100, opacity: 0, scale: 0.9 }}
+          animate={
+            isInView
+              ? { y: 0, opacity: 1, scale: 1.5 }
+              : { y: 100, opacity: 0, scale: 0.9 }
+          }
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 20,
+            duration: 0.8
+          }}
+        />
+      </div>
     </div>
   );
 }

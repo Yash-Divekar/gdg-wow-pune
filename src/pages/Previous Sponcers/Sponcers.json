@@ -1,162 +1,168 @@
 [
   {
-    "name": "Google Developers",
-    "logo": "/Content/Previous_Sponcers/Google Developers.png",
-    "website": "https://www.google.com"
-  },
-  {
-    "name": "Agprop",
-    "logo": "/Content/Previous_Sponcers/Agprop.svg",
-    "website": "#"
-  },
-  {
-    "name": "Konfhub",
-    "logo": "/Content/Previous_Sponcers/Konfhub.png",
-    "website": "#"
-  },
-  {
-    "name": "Languify",
-    "logo": "/Content/Previous_Sponcers/Languify.svg",
-    "website": "#"
-  },
-  {
-    "name": "Worqhat",
-    "logo": "/Content/Previous_Sponcers/Worqhat.png",
-    "website": "#"
-  },
-  {
-    "name": "Airmeet",
-    "logo": "/Content/Previous_Sponcers/Airmeet.png",
-    "website": "#"
-  },
-  {
-    "name": "AlgoZenith",
-    "logo": "/Content/Previous_Sponcers/AlgoZenith.png",
-    "website": "#"
-  },
-  {
-    "name": "Tezos",
-    "logo": "/Content/Previous_Sponcers/Tezos.png",
-    "website": "#"
-  },
-  {
-    "name": "Builders Tribe",
-    "logo": "/Content/Previous_Sponcers/buildersTribe.png",
-    "website": "#"
-  },
-  {
-    "name": "Developer Circles",
-    "logo": "/Content/Previous_Sponcers/developerCircle.png",
-    "website": "#"
-  },
-  {
-    "name": "Devfolio",
-    "logo": "/Content/Previous_Sponcers/devfolio.png",
-    "website": "#"
-  },
-  {
-    "name": "Virtual Cyber Labs",
-    "logo": "/Content/Previous_Sponcers/VirtualCyberLabs.png",
-    "website": "#"
-  },
-  {
-    "name": "DigitalOcean",
-    "logo": "/Content/Previous_Sponcers/DigitalOcean.png",
-    "website": "#"
-  },
-  {
-    "name": "echoAR",
-    "logo": "/Content/Previous_Sponcers/echoAR.png",
-    "website": "#"
-  },
-  {
-    "name": "egghead.io",
-    "logo": "/Content/Previous_Sponcers/egghead.io.png",
-    "website": "#"
-  },
-  {
-    "name": "Taskade",
-    "logo": "/Content/Previous_Sponcers/taskade.png",
-    "website": "#"
-  },
-  {
-    "name": "FlutterFlow",
-    "logo": "/Content/Previous_Sponcers/FlutterFlow.png",
-    "website": "#"
-  },
-  {
-    "name": "GeeksforGeeks",
-    "logo": "/Content/Previous_Sponcers/GeeksforGeeks.png",
-    "website": "#"
-  },
-  {
-    "name": "Modernizing Processes",
-    "logo": "/Content/Previous_Sponcers/Modernizing.png",
-    "website": "#"
-  },
-  {
-    "name": "JetBrains",
-    "logo": "/Content/Previous_Sponcers/jetBrains.png",
-    "website": "#"
-  },
-  {
-    "name": "Jovian.ml",
-    "logo": "/Content/Previous_Sponcers/jovian.ml.png",
-    "website": "#"
-  },
-  {
-    "name": "Strikingly",
-    "logo": "/Content/Previous_Sponcers/strikingly.png",
-    "website": "#"
-  },
-  {
-    "name": "Matic",
-    "logo": "/Content/Previous_Sponcers/Matic.png",
-    "website": "#"
-  },
-  {
-    "name": "Manning",
-    "logo": "/Content/Previous_Sponcers/MANNING.png",
-    "website": "#"
-  },
-  {
-    "name": "Zulip",
-    "logo": "/Content/Previous_Sponcers/Zulip.png",
-    "website": "#"
-  },
-  {
-    "name": "Prospera",
-    "logo": "/Content/Previous_Sponcers/prospera.png",
-    "website": "#"
-  },
-  {
-    "name": "Orkes",
-    "logo": "/Content/Previous_Sponcers/orkes.png",
-    "website": "#"
-  },
-  {
-    "name": "Progate",
-    "logo": "/Content/Previous_Sponcers/progate.png",
-    "website": "#"
-  },
-  {
-    "name": "Aspecta",
-    "logo": "/Content/Previous_Sponcers/Aspecta.png",
-    "website": "#"
-  },
-  {
     "name": "StreamYard",
-    "logo": "/Content/Previous_Sponcers/StreamYard.png",
+    "logo": "https://i.imgur.com/kU5UVYO.png",
     "website": "#"
   },
   {
     "name": "Scaler Edge",
-    "logo": "/Content/Previous_Sponcers/Scaler.png",
+    "logo": "https://i.imgur.com/wtgJy6Q.png",
     "website": "#"
   },
   {
     "name": "Sketch",
-    "logo": "/Content/Previous_Sponcers/Sketch.png",
+    "logo": "https://i.imgur.com/wU6Hko6.png",
+    "website": "#"
+  },
+  {
+    "name": "The Swag Box",
+    "logo": "https://i.imgur.com/X4fk5ZV.png",
+    "website": "#"
+  },
+  {
+    "name": "Google Developers",
+    "logo": "https://i.imgur.com/Ib4QiC2.png",
+    "website": "https://www.google.com"
+  },
+  {
+    "name": "Agprop",
+    "logo": "https://i.imgur.com/eQSYKwV.jpg",
+    "website": "#"
+  },
+  {
+    "name": "Konfhub",
+    "logo": "https://i.imgur.com/VOfRHOt.png",
+    "website": "#"
+  },
+  {
+    "name": "Languify",
+    "logo": "https://i.imgur.com/9yJ6v5U.png",
+    "website": "#"
+  },
+  {
+    "name": "Worqhat",
+    "logo": "https://i.imgur.com/LFiiTgj.png",
+    "website": "#"
+  },
+  {
+    "name": "Airmeet",
+    "logo": "https://i.imgur.com/SPAMAxU.png",
+    "website": "#"
+  },
+  {
+    "name": "AlgoZenith",
+    "logo": "https://i.imgur.com/oqtcThR.png",
+    "website": "#"
+  },
+  {
+    "name": "Tezos",
+    "logo": "https://i.imgur.com/IUurRqg.png",
+    "website": "#"
+  },
+  {
+    "name": "Builders Tribe",
+    "logo": "https://i.imgur.com/CPiJKWV.png",
+    "website": "#"
+  },
+  {
+    "name": "Developer Circles",
+    "logo": "https://i.imgur.com/0srYUAz.png",
+    "website": "#"
+  },
+  {
+    "name": "Devfolio",
+    "logo": "https://i.imgur.com/nOQPtwK.png",
+    "website": "#"
+  },
+  {
+    "name": "Virtual Cyber Labs",
+    "logo": "https://i.imgur.com/MW1lx2Y.png",
+    "website": "#"
+  },
+  {
+    "name": "DigitalOcean",
+    "logo": "https://i.imgur.com/z9j1dzE.png",
+    "website": "#"
+  },
+  {
+    "name": "echoAR",
+    "logo": "https://i.imgur.com/AuTN96m.png",
+    "website": "#"
+  },
+  {
+    "name": "egghead.io",
+    "logo": "https://i.imgur.com/bn1MdoE.png",
+    "website": "#"
+  },
+  {
+    "name": "Taskade",
+    "logo": "https://i.imgur.com/wtoL0KF.png",
+    "website": "#"
+  },
+  {
+    "name": "FlutterFlow",
+    "logo": "https://i.imgur.com/rlBvEbU.png",
+    "website": "#"
+  },
+  {
+    "name": "GeeksforGeeks",
+    "logo": "https://i.imgur.com/GBNWiUv.png",
+    "website": "#"
+  },
+  {
+    "name": "Modernizing Processes",
+    "logo": "https://i.imgur.com/jzIQBrY.png",
+    "website": "#"
+  },
+  {
+    "name": "JetBrains",
+    "logo": "https://i.imgur.com/CfyRS4S.png",
+    "website": "#"
+  },
+  {
+    "name": "Jovian.ml",
+    "logo": "https://i.imgur.com/AKr3DkG.png",
+    "website": "#"
+  },
+  {
+    "name": "Strikingly",
+    "logo": "https://i.imgur.com/XfwzLxs.png",
+    "website": "#"
+  },
+  {
+    "name": "Matic",
+    "logo": "https://i.imgur.com/y7DaTds.png",
+    "website": "#"
+  },
+  {
+    "name": "Manning",
+    "logo": "https://i.imgur.com/3LAnbK6.png",
+    "website": "#"
+  },
+  {
+    "name": "Zulip",
+    "logo": "https://i.imgur.com/D4MUZZC.png",
+    "website": "#"
+  },
+  {
+    "name": "Prospera",
+    "logo": "https://i.imgur.com/eOxk1Qz.png",
+    "website": "#"
+  },
+  {
+    "name": "Orkes",
+    "logo": "https://i.imgur.com/Z7ojv4Q.png",
+    "website": "#"
+  },
+  {
+    "name": "Progate",
+    "logo": "https://i.imgur.com/INPUE9C.png",
+    "website": "#"
+  },
+  {
+    "name": "Aspecta",
+    "logo": "https://i.imgur.com/VxxQ4lk.png",
     "website": "#"
   }
+  
 ]

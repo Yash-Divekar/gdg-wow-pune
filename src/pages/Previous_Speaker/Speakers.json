@@ -1,34 +1,44 @@
 [
   {
+    "name" : "Kartik Padmanabhan",
+    "description" : "Developer Relations, Google India",
+    "image": "https://i.imgur.com/0wEOCV2.png"
+  },
+  {
+    "name": "Nikita Gandhi",
+    "description" :"Formally Reginol Lead GDSC | Technical Program Manager, Google",
+    "image": "https://i.imgur.com/kIuYnNZ.png"
+  },
+  {
       "name": "Akshay Kumar",
       "description": "Tech Speaker",
-      "image": "/Content/Previous_Speakers_webp/Akshay Kumar.webp"
+      "image": "https://i.imgur.com/TskRltA.png"
     
   },
   {
       "name": "Amey Nerkar",
       "description": "Google DevExpert Payments",
-      "image": "/Content/Previous_Speakers_webp/Amey Nerker.webp"
+      "image": "https://i.imgur.com/Jma4Jaz.png"
   },
   {
       "name": "Anmol Nitave",
       "description": "Tech Speaker",
-      "image": "/Content/Previous_Speakers_webp/Anmol Nitave.webp"
+      "image": "https://i.imgur.com/LiPN5N3.png"
   },
   {
       "name": "Faizan Akhtar",
       "description": "Software Engineer",
-      "image": "/Content/Previous_Speakers_webp/Faizan Akhtar.webp"
+      "image": "https://i.imgur.com/pSPJ3AK.png"
   },
   {
       "name": "Ganesh Divekar",
       "description": "Engineering at Bajaj Finserv",
-      "image": "/Content/Previous_Speakers_webp/ganesh Divekar.webp"
+      "image": "https://i.imgur.com/mIncqdY.png"
   },
   {
       "name": "Nikita Desale",
       "description": "4x GCP Certified",
-      "image": "/Content/Previous_Speakers_webp/Nikita Desale.webp"
+      "image": "https://i.imgur.com/2FvJaGs.png"
   },
   {
       "name": "Pooja Bhaumik",
@@ -38,26 +48,26 @@
   {
       "name": "Sachin Sharma",
       "description": "IIT Kanpur in 2006.",
-      "image": "/Content/Previous_Speakers_webp/Sachin Sharma.webp"
+      "image": "https://i.imgur.com/Yzt2Cpe.png"
   },
   {
       "name": "Shrihriday Bhagwat",
       "description": "GDE Flutter and Dart",
-      "image": "/Content/Previous_Speakers_webp/Shrihriday Bhagwat.webp"
+      "image": "https://i.imgur.com/qGLZ8LE.png"
   },
   {
       "name": "Sweta Dargad",
       "description": "CISSP| Technical Trainer at Qualys",
-      "image": "/Content/Previous_Speakers_webp/Sweta Dargad.webp"
+      "image": "https://i.imgur.com/OXQaUOf.png"
   },
   {
       "name": "Vishal Virani",
       "description": "Co-Founder & CEO at DhiWise",
-      "image": "/Content/Previous_Speakers_webp/Vishal Virani.webp"
+      "image": "https://i.imgur.com/Ojw79V3.png"
   },
   {
       "name": "Vrijrij Singh",
       "description": "Google Developers Expert Firebase & ML",
-      "image": "/Content/Previous_Speakers_webp/Vrijrij Singh.webp"
+      "image": "https://i.imgur.com/dnlOOi5.png"
   }
 ]

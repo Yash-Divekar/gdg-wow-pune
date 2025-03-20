@@ -1,11 +1,9 @@
 @import "tailwindcss";
-
 .speaker_shape {
-  width: 90vw; /* Fills 90% of the viewport width */
+  width: 90vw;
   height: auto;
   object-fit: cover;
 
-  /* Apply the SVG Mask */
   -webkit-mask-image: url('/src/assets/Speaker_polygon.svg');
   mask-image: url('/src/assets/Speaker_polygon.svg');
 
@@ -19,10 +17,10 @@
   mask-repeat: no-repeat;
 }
 
-/* Mobile: Covers only 50% of the screen */
+/* Mobile */
 @media (max-width: 767px) {
   .speaker_shape {
-    width: 100vw; /* 50% screen width on mobile */
+    width: 100vw;
     height: auto;
   }
 }

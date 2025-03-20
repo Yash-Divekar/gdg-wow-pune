@@ -1,0 +1,119 @@
+{
+    "arrows": {
+      "src": "https://i.imgur.com/il58DK2.png",
+      "alt": "Arrows"
+    },
+    "Green_Quote": {
+      "src": "https://i.imgur.com/H2TW8Cw.png",
+      "alt": "Green Quote"
+    },
+    "image_1": {
+      "src": "https://i.imgur.com/8AKn5jA.png",
+      "alt": "Yellow Coma"
+    },
+    "image_2": {
+      "src": "https://i.imgur.com/4MSK7s2.png",
+      "alt": "Arrow Down"
+    },
+    "image_3": {
+      "src": "https://i.imgur.com/3mJpXxl.png",
+      "alt": "Hashtag"
+    },
+    "image_4": {
+      "src": "https://i.imgur.com/EQEE6t1.png",
+      "alt": "Arc"
+    },
+    "image_5": {
+      "src": "https://i.imgur.com/1dnvXgI.png",
+      "alt": "Pink Angle"
+    },
+    "image_6": {
+      "src": "https://i.imgur.com/vkMljfw.png",
+      "alt": "Red Angle"
+    },
+    "image_7": {
+      "src": "https://i.imgur.com/Y8wP5MQ.png",
+      "alt": "Left Bracket"
+    },
+    "image_8": {
+      "src": "https://i.imgur.com/OzY8OxP.png",
+      "alt": "Right Bracket"
+    },
+    "image_9": {
+      "src": "https://i.imgur.com/aL6aQiY.png",
+      "alt": "Participation"
+    },
+    "image_10": {
+      "src": "https://i.imgur.com/GEPK6Xq.png",
+      "alt": "25+ Sessions"
+    },
+    "image_11": {
+      "src": "https://i.imgur.com/jH1BkY5.png",
+      "alt": "35+ Speakers"
+    },
+    "image_12": {
+      "src": "https://i.imgur.com/fH7R9Hz.png",
+      "alt": "2 Days"
+    },
+    "image_13":{
+        "src": "https://i.imgur.com/6nIQa26.png",
+        "alt": "Minus"
+    },
+    "image_14": {
+      "src": "https://i.imgur.com/GfvgPQG.png",
+      "alt": "Green Multiply"
+    },
+    "image_15": {
+      "src": "https://i.imgur.com/dsZSKqH.png",
+      "alt": "Plus"
+    },
+    "image_16": {
+      "src": "https://i.imgur.com/dOIhesm.png",
+      "alt": "Equal"
+    },
+    "Line_Grid": {
+      "src": "https://i.imgur.com/F3LFX5v.png",
+      "alt": "Line Grid"
+    },
+    "Dot_Grid": {
+      "src": "https://i.imgur.com/Yinzqcz.png",
+      "alt": "Dot Grid"
+    },
+    "Angle_Logo": {
+      "src": "https://i.imgur.com/9V1g457.png",
+      "alt": "Angle Logo"
+    },
+    "Circle_Logo": {
+      "src": "https://i.imgur.com/xZnqOnZ.png",
+      "alt": "Circle Logo"
+    },
+    "Circle": {
+      "src": "https://i.imgur.com/dOuRO63.png",
+      "alt": "Circle"
+    },
+    "Wow_Logo": {
+      "src": "https://i.imgur.com/9J2nsFZ.png",
+      "alt": "Wow Logo"
+    },
+    "WOW_Without_Circle": {
+      "src": "https://i.imgur.com/W2Ndv2Q.png",
+      "alt": "WOW Without Circle"
+    },
+    "Pune_Slogan":{
+        "src" : "https://i.imgur.com/zgI586X.png",
+        "alt" : "Pune Slogan"
+    },
+    "Shaniwarwada_with_bg": {
+      "src": "https://i.imgur.com/y1IdUDD.png",
+      "alt": "Shaniwarwada"
+    },
+    "Shaniwarwada": {
+      "src": "https://i.imgur.com/k7wpUel.png",
+      "alt": "Shaniwarwada"
+    },
+    "Speaker_Polygon":{
+        "src": "https://i.imgur.com/DlXAjqT.png",
+        "alt": "Speaker Polygon"
+    }
+  }
+  
