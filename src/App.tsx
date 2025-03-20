@@ -20,7 +20,7 @@ function App() {
     const handleLoad = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 1000); // Ensures at least 1 second delay
+      }, 7000); // Ensures at least 1 second delay
     };
 
     if (document.readyState === "complete") {
