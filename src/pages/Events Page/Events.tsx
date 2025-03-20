@@ -1,5 +1,8 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 
 function Events() {
   const ref = useRef(null);
@@ -130,9 +133,16 @@ function Events() {
           custom={0.2}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 1.png" alt="Glimps 1" className="w-full h-full object-cover object-top"  loading="lazy"/>
+          <img src="https://i.imgur.com/JCXCkPN.png" alt="Glimps 1" className="w-full h-full object-cover object-top"  loading="lazy"/>
         </motion.div>
 
+        {/*<LazyLoadImage
+  src="high-quality-image.webp"
+  effect="blur" // Gives a blur effect while loading
+  alt="Speaker"
+  width="100%"
+  height="auto"
+/>*/}
         {/* Image 2 */}
         <motion.div 
           className="row-span-2 bg-indigo-300 rounded-lg flex justify-center items-center overflow-hidden border-4 border-yellow-400 order-3 lg:order-2"
@@ -140,7 +150,7 @@ function Events() {
           custom={0.3}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 2.png" alt="Glimps 2" className="w-full h-full object-cover" loading="lazy" />
+          <img src="https://i.imgur.com/4zhT7OQ.png" alt="Glimps 2" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 3 */}
@@ -150,7 +160,7 @@ function Events() {
           custom={0.4}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 3.png" alt="Glimps 3" className="w-full h-full object-cover" loading="lazy" />
+          <img src="https://i.imgur.com/HwqlajC.png" alt="Glimps 3" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 4 */}
@@ -160,7 +170,7 @@ function Events() {
           custom={0.5}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 4.png" alt="Glimps 4" className="w-full h-full object-cover" loading="lazy" />
+          <img src="https://i.imgur.com/sf90d9m.png" alt="Glimps 4" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 5 */}
@@ -170,7 +180,7 @@ function Events() {
           custom={0.6}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 5.png" alt="Glimps 5" className="w-full h-full object-cover" loading="lazy" />
+          <img src="https://i.imgur.com/sB7EiPc.png" alt="Glimps 5" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
 
         {/* Image 6 */}
@@ -180,7 +190,7 @@ function Events() {
           custom={0.7}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 6.png" alt="Glimps 6" className="w-full h-full object-cover object-top" loading="lazy" />
+          <img src="https://i.imgur.com/7FywEcX.png" alt="Glimps 6" className="w-full h-full object-cover object-top" loading="lazy" />
         </motion.div>
 
         {/* Image 7 */}
@@ -190,7 +200,7 @@ function Events() {
           custom={0.8}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 7.png" alt="Glimps 7" className="w-full h-full object-cover object-bottom" loading="lazy" />
+          <img src="https://i.imgur.com/Pjbll9r.png" alt="Glimps 7" className="w-full h-full object-cover object-bottom" loading="lazy" />
         </motion.div>
 
         {/* Image 8 */}
@@ -200,7 +210,7 @@ function Events() {
           custom={0.9}
           whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
         >
-          <img src="./Content/Glimps/image 8.png" alt="Glimps 8" className="w-full h-full object-cover" loading="lazy" />
+          <img src="https://i.imgur.com/QbN8PB1.png" alt="Glimps 8" className="w-full h-full object-cover" loading="lazy" />
         </motion.div>
       </motion.div>
     </div>

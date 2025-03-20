@@ -1,8 +1,8 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Question from './Question.json';
-import { FaEnvelope, FaLinkedin, FaInstagram, FaTwitter } from 'react-icons/fa';
-
+import SocialLinks from '../../components/SocialsLinks.tsx';
+import doodle from "../doodle.json";
 interface FAQItem {
     Question: string;
     Answer: string;
@@ -121,9 +121,10 @@ function FAQ() {
                                 >
                                     <h4 className="px-2 sm:px-3 md:px-5">{Item.Question}</h4>
                                     <motion.img
-                                        src="/Doddles/arrows.svg"
-                                        loading='lazy'
-                                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex-shrink-0 rotate-90"
+                                        src={doodle.image_6.src}
+                                        alt={doodle.image_6.alt } 
+                                       loading='lazy'
+                                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-10 md:h-10 flex-shrink-0 rotate-120"
                                         animate={{ 
                                             rotate: openIndex === index ? 180 : 0,
                                             scale: openIndex === index ? 1.1 : 1
@@ -259,42 +260,11 @@ function FAQ() {
                                     delay: 1
                                 }}
                             >
-                                <div className="flex gap-5 sm:gap-7 justify-center">
-                                    {[
-                                        { Icon: FaEnvelope, href: "mailto:gdgocwowpune@gmail.com" },
-                                        { Icon: FaLinkedin, href: "https://www.linkedin.com/company/gdsc-pune" },
-                                        { Icon: FaInstagram, href: "https://www.instagram.com/gdgoc.pune/" },
-                                        { Icon: FaTwitter, href: "https://x.com/GDSCPune" }
-                                    ].map((item, index) => (
-                                        <motion.a 
-                                            key={index}
-                                            href={item.href} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer" 
-                                            aria-label={item.Icon.name.replace('Fa', '')}
-                                            initial={{ scale: 0, opacity: 0 }}
-                                            animate={isInView ? { scale: 1, opacity: 1 } : { scale: 0, opacity: 0 }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 200,
-                                                damping: 10,
-                                                delay: 1 + (index * 0.1)
-                                            }}
-                                            whileHover={{ 
-                                                scale: 1.25, 
-                                                color: "#4b5563", // gray-600
-                                                transition: { duration: 0.2 } 
-                                            }}
-                                            whileTap={{ scale: 0.9 }}
-                                        >
-                                            <item.Icon className="text-xl sm:text-2xl transition duration-300" />
-                                        </motion.a>
-                                    ))}
-                                </div>
+                                <SocialLinks />
                                 <motion.img 
-                                    src="/Logo/Main_wow_logo.svg" 
-                                    alt="WOW Pune Logo" 
-                                    loading='lazy'
+                                    src={doodle.Wow_Logo.src}
+                                    alt={doodle.Wow_Logo.alt } 
+                                   loading='lazy'
                                     className='w-32 sm:w-36 md:w-40 mt-3 md:mt-4'
                                     initial={{ scale: 0, rotate: -10, opacity: 0 }}
                                     animate={

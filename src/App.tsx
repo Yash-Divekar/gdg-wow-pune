@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+<<<<<<< HEAD
 import Navbar from "./components/Navbar2";
+=======
+import Navbar from "./components/Navbar";
+>>>>>>> 9592687 (no Knofhub)
 import {
   Home,
   Previous_speaker,
@@ -20,7 +24,11 @@ function App() {
     const handleLoad = () => {
       setTimeout(() => {
         setLoading(false);
+<<<<<<< HEAD
       }, 2000); // Ensures at least 1 second delay
+=======
+      }, 1000); // Ensures at least 1 second delay
+>>>>>>> 9592687 (no Knofhub)
     };
 
     if (document.readyState === "complete") {
