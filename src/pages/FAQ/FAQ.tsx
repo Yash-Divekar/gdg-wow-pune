@@ -124,7 +124,7 @@ function FAQ() {
                                         src={doodle.image_6.src}
                                         alt={doodle.image_6.alt } 
                                        loading='lazy'
-                                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-10 md:h-10 flex-shrink-0 rotate-120"
+                                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-10 md:h-10 flex-shrink-0 -rotate-60"
                                         animate={{ 
                                             rotate: openIndex === index ? 180 : 0,
                                             scale: openIndex === index ? 1.1 : 1
