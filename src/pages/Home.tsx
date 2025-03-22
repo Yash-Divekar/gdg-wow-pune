@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import doodle from "./doodle.json";
+import { imageMap } from '../assets/ImageMap';
 
 export default function Home1() {
   const [timeLeft, setTimeLeft] = useState({
@@ -42,8 +43,6 @@ export default function Home1() {
       }
     };
   }, []);
-
-
 
   useEffect(() => {
     const targetDate = new Date("2025-04-19T08:00:00+05:30");
@@ -185,8 +184,8 @@ export default function Home1() {
       <div className=" h-auto w-full flex xl:flex-row flex-col">
         <div className="relative h-auto left-0">
           <motion.img
-            src={doodle.Shaniwarwada_with_bg.src}
-            alt={doodle.Shaniwarwada_with_bg.alt } 
+            src={imageMap.Shaniwar_Wada_With_bg.src}
+            alt={imageMap.Shaniwar_Wada_With_bg.alt } 
            fetchPriority="high"
             className="hidden xl:block xl:h-screen"
             initial={{ x: -100, rotate: -10, opacity: 0 }}
@@ -253,8 +252,8 @@ export default function Home1() {
           })}
 
           <motion.img
-            src={doodle.Angle_Logo.src}
-            alt={doodle.Angle_Logo.alt } 
+            src={imageMap.Angle_Logo.src}
+            alt={imageMap.Angle_Logo.alt } 
            fetchPriority="high"
             className="absolute top-0 left-[25%] scale-[40%] hidden xl:block"
             initial={toddleAnimations[3].initial}
@@ -307,8 +306,8 @@ export default function Home1() {
               <div className="flex justify-center items-center xl:justify-end relative h-[12vh] xl:h-[20vh]">
                 {/* Main Image */}
                 <motion.img
-                  src={doodle.WOW_Without_Circle.src}
-                  alt={doodle.WOW_Without_Circle.alt } 
+                  src={imageMap.WOW_Without_Circle.src}
+                  alt={imageMap.WOW_Without_Circle.alt } 
                  fetchPriority="high"
                   className="xl:w-[30vw] w-[80%]"
                   initial={{ scale: 0, rotate: -10, opacity: 0 }}
@@ -327,8 +326,8 @@ export default function Home1() {
 
                 {/* Overlay Circle (Properly Centered for XL Screens) */}
                 <motion.img
-                  src={doodle.Circle.src}
-                  alt={doodle.Circle.alt } 
+                  src={imageMap.Circle.src}
+                  alt={imageMap.Circle.alt } 
                  fetchPriority="high"
                   className="w-[13%] xl:w-[17%] absolute top-[50.25%] left-[51.8%] lg:top-[50.5%] lg:left-[52.2%] transform -translate-x-1/2 -translate-y-1/2"
                   initial={{ scale: 0, rotate: -10, opacity: 0 }}
@@ -419,8 +418,8 @@ export default function Home1() {
             </div>
         </div>
         <motion.img
-          src={doodle.Shaniwarwada.src}
-          alt={doodle.Shaniwarwada.alt } 
+          src={imageMap.Shaniwar_Wada.src}
+          alt={imageMap.Shaniwar_Wada.alt } 
          fetchPriority="high"
           className="w-[80%] max-w-md mt-5 mx-auto scale-110
   absolute bottom-0 left-1/2 transform -translate-x-1/2

@@ -3,6 +3,8 @@ import { motion, useInView, AnimatePresence } from "framer-motion";
 import speakersData from "./Speakers.json";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import doodle from "../doodle.json";
+import { imageMap } from '../../assets/ImageMap';
+
 
 // Cache images to avoid reloading
 const imageCache: { [key: string]: boolean } = {};
@@ -16,7 +18,7 @@ function PreviousSpeaker() {
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
   // Memoized SVG path to prevent reloading
-  const speakerPolygon = useMemo(() => "/src/assets/Speaker_polygon.svg", []);
+  const speakerPolygon = useMemo(() => imageMap.Speaker_Polygon.src, []);
 
   // Preload images on mount
   useEffect(() => {
@@ -149,7 +151,7 @@ function PreviousSpeaker() {
                 >
                   <img
                     src={speakerPolygon}
-                    alt="Speaker bg"
+                    alt={imageMap.Speaker_Polygon.alt}
                     className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 max-h-[105%] scale-100"
                   />
                   {/*<img
