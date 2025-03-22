@@ -1,6 +1,6 @@
 import Home from './Home';
 import Previous_speaker from "./Previous_Speaker/Previous_speaker";
-import Previous_Sponcers from "./Previous Sponcers/Previous_Sponcers";
+import Previous_Sponcers from "./Previous Sponsors/Previous_Sponsors";
 import FAQ from "./FAQ/FAQ";
 import Footer from "./Footer/Footer"
 import About from "./About"

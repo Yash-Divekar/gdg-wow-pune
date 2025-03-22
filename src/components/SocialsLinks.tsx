@@ -2,7 +2,7 @@ import { FaEnvelope, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const socialLinks = [
   { Icon: FaEnvelope, href: "mailto:gdgocwowpune@gmail.com", label: "Email" },
-  { Icon: FaLinkedin, href: "https://www.linkedin.com/company/gdsc-pune", label: "LinkedIn" },
+  { Icon: FaLinkedin, href: "https://www.linkedin.com/company/gdgoc-pune", label: "LinkedIn" },
   { Icon: FaInstagram, href: "https://www.instagram.com/gdgoc.pune/", label: "Instagram" },
   { Icon: FaTwitter, href: "https://x.com/gdgocpune", label: "Twitter" },
 ];

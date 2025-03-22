@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import Question from './Question.json';
 import SocialLinks from '../../components/SocialsLinks.tsx';
@@ -177,7 +177,14 @@ function FAQ() {
                                                 exit={{ opacity: 0, y: -10 }}
                                                 className="p-3 sm:p-4 md:p-5 text-xs sm:text-sm md:text-base"
                                             >
-                                                <p>{Item.Answer}</p>
+                                                <p>
+  {Item.Answer.split("\n").map((line, index) => (
+    <React.Fragment key={index}>
+      {line}
+      <br />
+    </React.Fragment>
+  ))}
+</p>
                                             </motion.div>
                                         </motion.div>
                                     )}

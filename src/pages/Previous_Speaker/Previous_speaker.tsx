@@ -144,7 +144,7 @@ function PreviousSpeaker() {
                   exit={{ opacity: 0.8 }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
-                  <img src={speakerPolygon} alt="Speaker bg" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30" />
+                  <img src={speakerPolygon} alt="Speaker bg" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 max-h-[105%] scale-100" />
                   {/*<img
                     src={speakersData[currentSpeaker].image}
                     alt={speakersData[currentSpeaker].name}

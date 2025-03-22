@@ -79,41 +79,41 @@
       "src": "https://i.imgur.com/Yinzqcz.png",
       "alt": "Dot Grid"
     },
-    "Angle_Logo": {
-      "src": "https://i.imgur.com/9V1g457.png",
-      "alt": "Angle Logo"
-    },
-    "Circle_Logo": {
-      "src": "https://i.imgur.com/xZnqOnZ.png",
-      "alt": "Circle Logo"
-    },
-    "Circle": {
-      "src": "https://i.imgur.com/dOuRO63.png",
-      "alt": "Circle"
-    },
-    "Wow_Logo": {
-      "src": "https://i.imgur.com/9J2nsFZ.png",
-      "alt": "Wow Logo"
-    },
-    "WOW_Without_Circle": {
-      "src": "https://i.imgur.com/W2Ndv2Q.png",
-      "alt": "WOW Without Circle"
-    },
     "Pune_Slogan":{
         "src" : "https://i.imgur.com/zgI586X.png",
         "alt" : "Pune Slogan"
     },
+    "Speaker_Polygon":{
+        "src": "https://i.imgur.com/DlXAjqT.png",
+        "alt": "src/assets/Speaker_polygon.svg"
+    },
+    "Angle_Logo": {
+      "src": "src/assets/Logo/Angle_Logo.svg",
+      "alt": "Angle Logo"
+    },
+    "Circle_Logo": {
+      "src": "src/assets/Logo/Circle logo.png",
+      "alt": "Circle Logo"
+    },
+    "Circle": {
+      "src": "src/assets/Logo/Circle.png",
+      "alt": "Circle"
+    },
+    "Wow_Logo": {
+      "src": "src/assets/Logo/Main_wow_logo.png",
+      "alt": "Wow Logo"
+    },
+    "WOW_Without_Circle": {
+      "src": "src/assets/Logo/Wow_without_circle.png",
+      "alt": "WOW Without Circle"
+    },
     "Shaniwarwada_with_bg": {
-      "src": "https://i.imgur.com/y1IdUDD.png",
+      "src": "src/assets/Shaniwar_Wada_With_bg.svg",
       "alt": "Shaniwarwada"
     },
     "Shaniwarwada": {
-      "src": "https://i.imgur.com/k7wpUel.png",
+      "src": "src/assets/shaniwar-wada.png",
       "alt": "Shaniwarwada"
-    },
-    "Speaker_Polygon":{
-        "src": "https://i.imgur.com/DlXAjqT.png",
-        "alt": "Speaker Polygon"
     }
   }
   

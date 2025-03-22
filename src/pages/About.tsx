@@ -75,7 +75,7 @@ function About2() {
                 transition={{ delay: 0.4 }}
                 className="p-2"
               >
-                Welcome to Google Developer Student Clubs Wonder of Wonders -
+                Welcome to Google Developer Groups on Campus Wonder of Wonders -
                 where innovation meets community! 🌟
               </motion.p>
               <motion.p
@@ -85,7 +85,7 @@ function About2() {
                 transition={{ delay: 0.6 }}
                 className="p-2"
               >
-                GDSC WoW is an extraordinary annual celebration that brings
+                GDGoC WoW is an extraordinary annual celebration that brings
                 together the brightest minds from across our global developer
                 community.
               </motion.p>

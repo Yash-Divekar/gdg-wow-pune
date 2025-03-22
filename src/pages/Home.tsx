@@ -16,6 +16,35 @@ export default function Home1() {
     margin: "-20%"
   });
 
+
+  {/*Konfhub button*/ }
+  const buttonRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widget.konfhub.com/widget.js";
+    script.async = true;
+    script.setAttribute("button_id", "btn_c55a733dcef2");
+
+    // Append script to the button container or document body
+    if (buttonRef.current) {
+      buttonRef.current.appendChild(script);
+    } else {
+      document.body.appendChild(script);
+    }
+
+    // Cleanup: Remove script when component unmounts
+    return () => {
+      if (buttonRef.current && buttonRef.current.contains(script)) {
+        buttonRef.current.removeChild(script);
+      } else if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+
+
   useEffect(() => {
     const targetDate = new Date("2025-04-19T08:00:00+05:30");
 
@@ -255,8 +284,8 @@ export default function Home1() {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row  xl:flex-col justify-center items-center p-5 text-black xl:ml-auto xl:text-right xl:mr-[5vw] pt-[15vh] xl:pt-[15vh] gap-2 xl:items-center">
-          <div className="flex justify-center xl:justify-end items-center xl:items-end flex-col md:flex-col xl:flex-rows text-center xl:text-right md:pt-10 lg:pt-0">
+        <div className="flex flex-col sm:flex-row xl:flex-col justify-center items-center p-5 text-black xl:ml-auto xl:text-right xl:mr-[5vw] pt-[15vh] xl:pt-[15vh] gap-4 xl:gap-2 xl:items-center">
+          <div className="flex justify-center xl:justify-end items-center xl:items-end flex-col md:flex-col xl:flex-rows text-center xl:text-right md:pt-10 lg:pt-0 lg:gap-5 xl:gap-0">
             <motion.h2
               initial={{ x: 100, opacity: 0 }}
               animate={isInView ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
@@ -267,15 +296,15 @@ export default function Home1() {
                 delay: 0.5
               }}
             >
-              <h4 className="text-basic sm:text-lg md:text-xl xl:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
+              <p className="text-basic sm:text-lg md:text-xl xl:text-2xl font-sans font-bold bg-gradient-to-r from-[#EA4335] via-[#4285F4] to-[#34A853] text-transparent bg-clip-text">
                 Google Developer Groups on Campus पुणे
-              </h4>
-              <p className="text-sm md:text-basic lg:text-lg xl:text-xl flex justify-center xl:justify-end">
+              </p>
+              <p className="text-sm md:text-basic lg:text-lg xl:text-xl flex justify-center xl:justify-end mb-2">
                 Presents
               </p>
             </motion.h2>
-            <div className="flex flex-col justify-center items-center">
-              <div className="flex justify-center items-center xl:justify-end relative">
+            <div className="flex flex-col justify-center items-center lg:gap-7 xl:gap-0 mt-2">
+              <div className="flex justify-center items-center xl:justify-end relative h-[12vh] xl:h-[20vh]">
                 {/* Main Image */}
                 <motion.img
                   src={doodle.WOW_Without_Circle.src}
@@ -301,7 +330,7 @@ export default function Home1() {
                   src={doodle.Circle.src}
                   alt={doodle.Circle.alt } 
                  fetchPriority="high"
-                  className="w-[13%] xl:w-[17%] absolute top-[51.5%] left-[51.8%] lg:top-[50.2%] lg:left-[52.3%] transform -translate-x-1/2 -translate-y-1/2"
+                  className="w-[13%] xl:w-[17%] absolute top-[50.25%] left-[51.8%] lg:top-[50.5%] lg:left-[52.2%] transform -translate-x-1/2 -translate-y-1/2"
                   initial={{ scale: 0, rotate: -10, opacity: 0 }}
                   animate={
                     isInView
@@ -341,7 +370,7 @@ export default function Home1() {
               />
             </div>
           </div>
-          <div className="flex justify-center items-center flex-col md:flex-col xl:flex-rows text-center xl:text-right md:p-5 xl:pt-0 md:pt-10 xl:p-0">
+          <div className="flex justify-center items-center flex-col gap-2 md:flex-col xl:flex-rows text-center xl:text-right md:p-5 xl:pt-0 md:pt-10 xl:p-0">
             <motion.div
               className="text-white text-center flex flex-row gap-3 xl:gap-8"
               initial={{ scale: 0.8, opacity: 0 }}
@@ -377,29 +406,17 @@ export default function Home1() {
               ))}
             </motion.div>
 
-            <motion.button
-              className="bg-gradient-to-r from-[#4285F4] to-[#79ACFF] px-10 py-2 text-white text-lg font-bold rounded-full my-8 border-1 border-black shadow-2xl"
+            {/* Replace the Register button with Konfhub button */}
+            <motion.div
+              ref={buttonRef} // Attach ref to this div
+              className="my-8" // Match the spacing of the original button
               initial={{ y: 100, opacity: 0 }}
               animate={isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
-              whileHover={{
-                scale: 1.1,
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 10
-                }
-              }}
-              whileTap={{ scale: 0.9 }}
-              transition={{
-                type: "spring",
-                stiffness: 200,
-                damping: 15,
-                delay: 1.5
-              }}
+              transition={{ type: "spring", stiffness: 200, damping: 15, delay: 1.5 }}
             >
-              Register now
-            </motion.button>
-          </div>
+              {/* The Konfhub script will render the button here */}
+            </motion.div>
+            </div>
         </div>
         <motion.img
           src={doodle.Shaniwarwada.src}
