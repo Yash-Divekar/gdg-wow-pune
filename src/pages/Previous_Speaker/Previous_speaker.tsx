@@ -1,16 +1,17 @@
-import { useRef, useState, useEffect, useMemo } from "react";
+import React, { useRef, useState, useEffect, useMemo } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import speakersData from "./Speakers.json";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import doodle from "../doodle.json";
-
 
 // Cache images to avoid reloading
 const imageCache: { [key: string]: boolean } = {};
 
 function PreviousSpeaker() {
   const [currentSpeaker, setCurrentSpeaker] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState<{ [key: number]: boolean }>({});
+  const [imagesLoaded, setImagesLoaded] = useState<{ [key: number]: boolean }>(
+    {}
+  );
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
@@ -44,7 +45,9 @@ function PreviousSpeaker() {
 
     const preloadAllImages = async () => {
       await preloadImage(0); // Load first image immediately
-      await Promise.all(speakersData.slice(1).map((_, index) => preloadImage(index + 1)));
+      await Promise.all(
+        speakersData.slice(1).map((_, index) => preloadImage(index + 1))
+      );
     };
 
     preloadAllImages();
@@ -87,8 +90,8 @@ function PreviousSpeaker() {
       {/* Background Image */}
       <motion.img
         src={doodle.Line_Grid.src}
-        alt={doodle.Line_Grid.alt } 
-       className="absolute -z-10 h-full w-full object-cover"
+        alt={doodle.Line_Grid.alt}
+        className="absolute -z-10 h-full w-full object-cover"
         initial={{ scale: 1.2, opacity: 0 }}
         animate={
           isInView ? { scale: 1, opacity: 1 } : { scale: 1.2, opacity: 0 }
@@ -133,34 +136,37 @@ function PreviousSpeaker() {
                   transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
                 />
               </div>
-
-              {/* Speaker Image with Pre-loaded Images */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={currentSpeaker}
-                  className="w-full z-10"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0.8 }}
-                  transition={{ duration: 0.8, ease: "easeInOut" }}
-                >
-                  <img src={speakerPolygon} alt="Speaker bg" className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 max-h-[105%] scale-100" />
-                  {/*<img
-                    src={speakersData[currentSpeaker].image}
-                    alt={speakersData[currentSpeaker].name}
-                    className="speaker_shape"
-                    style={{ visibility: imagesLoaded[currentSpeaker] ? 'visible' : 'hidden' }}
-                  />*/}
-
-                  <LazyLoadImage
-                    src={speakersData[currentSpeaker].image}
-                    effect="blur" // Gives a blur effect while loading
-                    alt={speakersData[currentSpeaker].name}
-                    style={{ visibility: imagesLoaded[currentSpeaker] ? 'visible' : 'hidden' }}
-                    className="speaker_shape"
-                  />
-                </motion.div>
-              </AnimatePresence>
+              <img
+                src={SpeakerPolygon}
+                alt="Speaker bg"
+                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 max-h-[105%] scale-100"
+              />
+              {/* Fixed-size container with relative units */}
+              <div
+                className="relative w-[90%] h-[90%] mx-auto"
+                style={{ aspectRatio: "1 / 1" }} // Adjust based on your image aspect ratio
+              >
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentSpeaker}
+                    className="absolute inset-0 z-10"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0.8 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                  >
+                    <LazyLoadImage
+                      src={speakersData[currentSpeaker].image}
+                      effect="blur"
+                      alt={speakersData[currentSpeaker].name}
+                      className="w-full h-full object-cover speaker_shape"
+                      style={{
+                        visibility: imagesLoaded[currentSpeaker] ? "visible" : "hidden",
+                      }}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
               <div className="z-20">
                 <motion.img
                   src="https://i.imgur.com/H2TW8Cw.png"
@@ -181,7 +187,7 @@ function PreviousSpeaker() {
               </div>
 
               <motion.div
-                className="hidden lg:block lg:absolute lg:bottom-10 lg:right-5 bg-red-500 lg:w-[25vw] rounded-lg p-3"
+                className="hidden lg:block lg:absolute lg:bottom-10 lg:right-5 bg-red-500 lg:w-[25vw] rounded-lg p-3 "
                 initial={{ y: 20, opacity: 0 }}
                 animate={isInView ? { y: 0, opacity: 1 } : {}}
                 transition={{ type: "spring", duration: 1, delay: 0.3 }}
@@ -203,15 +209,24 @@ function PreviousSpeaker() {
                       initial="hidden"
                       animate="visible"
                     />
-                    <motion.p
+                    <motion.div
                       className="text-center text-xs lg:text-base"
                       custom={2}
                       variants={textVariants}
                       initial="hidden"
                       animate="visible"
                     >
-                      {speakersData[currentSpeaker].description}
-                    </motion.p>
+                      <p>
+                        {speakersData[currentSpeaker].description
+                          .split("\n")
+                          .map((line, index) => (
+                            <React.Fragment key={index}>
+                              {line}
+                              <br />
+                            </React.Fragment>
+                          ))}
+                      </p>
+                    </motion.div>
                   </motion.div>
                 </AnimatePresence>
               </motion.div>
