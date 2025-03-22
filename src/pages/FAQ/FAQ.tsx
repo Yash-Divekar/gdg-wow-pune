@@ -3,6 +3,8 @@ import { motion, AnimatePresence, useInView } from "framer-motion";
 import Question from "./Question.json";
 import SocialLinks from "../../components/SocialsLinks.tsx";
 import doodle from "../doodle.json";
+import { imageMap } from '../../assets/ImageMap';
+
 interface FAQItem {
   Question: string;
   Answer: string;
@@ -281,8 +283,8 @@ function FAQ() {
               >
                 <SocialLinks />
                 <motion.img
-                  src={doodle.Wow_Logo.src}
-                  alt={doodle.Wow_Logo.alt}
+                  src={imageMap.Main_logo.src}
+                  alt={imageMap.Main_logo.alt } 
                   loading="lazy"
                   className="w-32 sm:w-36 md:w-40 mt-3 md:mt-4"
                   initial={{ scale: 0, rotate: -10, opacity: 0 }}

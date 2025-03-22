@@ -163,6 +163,7 @@ export default function Home1() {
     <div
       ref={ref}
       className="relative min-h-screen h-full w-full flex overflow-hidden"
+      id="main-content"
     >
       <motion.img
         src={doodle.Line_Grid.src} // Dynamic source
@@ -254,7 +255,7 @@ export default function Home1() {
           <motion.img
             src={imageMap.Angle_Logo.src}
             alt={imageMap.Angle_Logo.alt } 
-           fetchPriority="high"
+            fetchPriority="high"
             className="absolute top-0 left-[25%] scale-[40%] hidden xl:block"
             initial={toddleAnimations[3].initial}
             animate={

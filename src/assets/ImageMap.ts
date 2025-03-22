@@ -1,7 +1,7 @@
-import WOW_Without_Circle from './Logo/WOW_Without_Circle.png'; // Adjust extension as needed
-import Circle_logo from './Logo/Circle_logo.png'; // Adjust extension as needed
-import Main_logo from './Logo/Main Logo.png'; // Adjust extension as needed
-import Angle_Logo from './Logo/Angle_Logo.svg'; // Adjust extension as needed
+import WOW_Without_Circle from './Logo/WOW_Without_Circle.png';
+import Circle_logo from './Logo/Circle_logo.png';
+import Main_logo from './Logo/Main_Logo.png'; 
+import Angle_Logo from './Logo/Angle_Logo.svg';
 import Circle from "./Logo/Circle.svg"
 import Shaniwar_Wada_With_bg from "./Shaniwar_Wada_With_bg.svg"
 import Shaniwar_Wada from "./shaniwar-wada.png"
