@@ -136,37 +136,42 @@ function PreviousSpeaker() {
                   transition={{ type: "spring", duration: 1.2, delay: 0.2 }}
                 />
               </div>
-              <img
-                src={SpeakerPolygon}
-                alt="Speaker bg"
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 max-h-[105%] scale-100"
-              />
-              {/* Fixed-size container with relative units */}
-              <div
-                className="relative w-[90%] h-[90%] mx-auto"
-                style={{ aspectRatio: "1 / 1" }} // Adjust based on your image aspect ratio
-              >
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentSpeaker}
-                    className="absolute inset-0 z-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0.8 }}
-                    transition={{ duration: 0.8, ease: "easeInOut" }}
-                  >
-                    <LazyLoadImage
-                      src={speakersData[currentSpeaker].image}
-                      effect="blur"
-                      alt={speakersData[currentSpeaker].name}
-                      className="w-full h-full object-cover speaker_shape"
-                      style={{
-                        visibility: imagesLoaded[currentSpeaker] ? "visible" : "hidden",
-                      }}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+
+              {/* Speaker Image with Pre-loaded Images */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentSpeaker}
+                  className="w-full z-10"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0.8 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                >
+                  <img
+                    src={speakerPolygon}
+                    alt="Speaker bg"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 max-h-[105%] scale-100"
+                  />
+                  {/*<img
+                    src={speakersData[currentSpeaker].image}
+                    alt={speakersData[currentSpeaker].name}
+                    className="speaker_shape"
+                    style={{ visibility: imagesLoaded[currentSpeaker] ? 'visible' : 'hidden' }}
+                  />*/}
+
+                  <LazyLoadImage
+                    src={speakersData[currentSpeaker].image}
+                    effect="blur" // Gives a blur effect while loading
+                    alt={speakersData[currentSpeaker].name}
+                    style={{
+                      visibility: imagesLoaded[currentSpeaker]
+                        ? "visible"
+                        : "hidden"
+                    }}
+                    className="speaker_shape"
+                  />
+                </motion.div>
+              </AnimatePresence>
               <div className="z-20">
                 <motion.img
                   src="https://i.imgur.com/H2TW8Cw.png"
