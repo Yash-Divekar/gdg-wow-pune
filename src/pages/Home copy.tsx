@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import doodle from "./doodle.json";
 import { imageMap } from "../assets/ImageMap";
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa";
 
 export default function Home1() {
   const [timeLeft, setTimeLeft] = useState({
@@ -238,7 +238,7 @@ export default function Home1() {
         }}
       />
 
-      <div className=" h-auto w-full flex xl:flex-row flex-col">
+      <div className=" h-auto w-full flex xl:flex-row flex-col xl:gap-10">
         <div className="relative h-auto left-0">
           <motion.img
             src={imageMap.Shaniwar_Wada_With_bg.src}
@@ -340,7 +340,7 @@ export default function Home1() {
           />
         </div>
 
-        <div className="flex flex-col sm:flex-row xl:flex-col justify-center items-center p-5 text-black xl:ml-auto xl:text-right xl:mr-[5vw] pt-[10vh] xl:pt-[6vh] gap-4 xl:gap-2 xl:items-center">
+        <div className="flex flex-col sm:flex-row xl:flex-col justify-center items-center p-5 text-black xl:ml-auto xl:text-right xl:mr-[5vw] pt-[10vh] gap-4 xl:gap-2 xl:items-center">
           <div className="flex justify-center xl:justify-end items-center xl:items-end flex-col md:flex-col xl:flex-rows text-center xl:text-right md:pt-10 lg:pt-0 lg:gap-5 xl:gap-0">
             <motion.h2
               initial={{ x: 100, opacity: 0 }}
@@ -466,8 +466,9 @@ export default function Home1() {
               ))}
             </motion.div>
 
-            <div className="flex flex-col xl:flex-row gap-3 xl:gap-6 justify-center items-center">
-              <div className="relative">
+            
+              {/* Mobile: Button at top */}
+              <div className="relative mb-3">
                 <motion.div
                   ref={buttonRef}
                   className="mt-8"
@@ -519,7 +520,12 @@ export default function Home1() {
                   </AnimatePresence>
                 )}
               </div>
-              {/*location*/}
+              <div
+              className="flex flex-col items-center 
+  xl:flex-row xl:justify-center xl:items-center 
+  gap-3 xl:gap-6"
+            >
+              {/* Date Section - First on mobile, middle on desktop */}
               <motion.div
                 initial={{ y: 100, opacity: 0 }}
                 animate={
@@ -531,14 +537,35 @@ export default function Home1() {
                   damping: 18,
                   delay: 1.8
                 }}
-                className="xl:mt-6 flex items-center font-semibold text-start gap-1 text-black text-xs xl:text-sm"
+                className="xl:order-1 flex items-center justify-center font-semibold text-center gap-2 text-black text-xs xl:text-sm"
               >
-                <FaMapMarkerAlt className="text-red-500 size-5 xl:size-8" />{" "}
-                {/* Location icon */}
+                <FaCalendarAlt className="text-green-400 size-7 xl:size-8 mb-1" />
+                <span>
+                  19th April : Speaker Session
+                  <br />
+                  20th April : Live Workshop &nbsp;&nbsp;
+                </span>
+                </motion.div>
+
+              {/* Location Section - Last on mobile, last on desktop */}
+              <motion.div
+                initial={{ y: 100, opacity: 0 }}
+                animate={
+                  isInView ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }
+                }
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 18,
+                  delay: 1.8
+                }}
+                className="xl:order-3 flex items-center  font-semibold text-start gap-1 text-black text-xs xl:text-sm"
+              >
+                <FaMapMarkerAlt className="text-red-500 size-7 xl:size-8" />
                 <span>
                   MIT World Peace University,
                   <br />
-                  Pune, Maharashtra, India.
+                  Rambaug Colony, Kothrud, Pune.
                 </span>
               </motion.div>
             </div>

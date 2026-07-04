@@ -1,4 +1,4 @@
-import { Link } from "react-scroll";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -24,54 +24,42 @@ export default function Navbar() {
           GDGoC
         </a>
         <div className="border border-black rounded-r-full px-3 xl:px-8 py-2 flex flex-row gap-2 xl:gap-8 text-xs md:text-sm items-center bg-white">
-          <Link 
-            to="home" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          <NavLink
+            to="#home"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
           >
             Home
-          </Link>
-          <Link 
-            to="about" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#about"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
           >
             About
-          </Link>
-          <Link 
-            to="speaker" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#speaker"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
           >
             Speaker
-          </Link>
-          <Link 
-            to="sponsor" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#sponsor"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
           >
             Sponsor
-          </Link>
-          <Link 
-            to="glimpses" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#glimpses"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
           >
             Glimpses
-          </Link>
-          <Link 
-            to="faq" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#faq"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
           >
             FAQ
-          </Link>
+          </NavLink>
         </div>
       </div>
 
@@ -83,15 +71,15 @@ export default function Navbar() {
         >
           GDGoC
         </a>
-        <button 
+        <button
           onClick={toggleMenu}
           className="border border-black rounded-full p-2 bg-white focus:outline-none"
         >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            className="h-6 w-6" 
-            fill="none" 
-            viewBox="0 0 24 24" 
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
             {isMenuOpen ? (
@@ -106,60 +94,48 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden mt-2 border border-black rounded-lg bg-white shadow-md p-4 flex flex-col gap-4">
-          <Link 
-            to="home" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          <NavLink
+            to="#home"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
-          </Link>
-          <Link 
-            to="about" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#about"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             About
-          </Link>
-          <Link 
-            to="speaker" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#speaker"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Speaker
-          </Link>
-          <Link 
-            to="sponsor" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#sponsor"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Sponsor
-          </Link>
-          <Link 
-            to="glimpses" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#glimpses"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             Glimpses
-          </Link>
-          <Link 
-            to="faq" 
-            smooth={true} 
-            duration={600} 
-            className="cursor-pointer hover:text-blue-600 transition-colors"
+          </NavLink>
+          <NavLink
+            to="#faq"
+            className="cursor-pointer text-black hover:text-blue-600 transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
             FAQ
-          </Link>
+          </NavLink>
         </div>
       )}
     </nav>

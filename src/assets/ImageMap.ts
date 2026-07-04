@@ -1,10 +1,10 @@
-import WOW_Without_Circle from './Logo/WOW_Without_Circle.png';
-import Circle_logo from './Logo/Circle_logo.png';
-import Main_logo from './Logo/Main_Logo.png'; 
+import WOW_Without_Circle from './Logo/WOW_Without_Circle.webp';
+import Circle_logo from './Logo/Circle_logo.webp';
+import Main_logo from './Logo/Main_Logo.webp'; 
 import Angle_Logo from './Logo/Angle_Logo.svg';
 import Circle from "./Logo/Circle.svg"
 import Shaniwar_Wada_With_bg from "./Shaniwar_Wada_With_bg.svg"
-import Shaniwar_Wada from "./shaniwar-wada.png"
+import Shaniwar_Wada from "./shaniwar-wada.webp"
 import Speaker_Polygon from "./Speaker_polygon.svg"
 
 

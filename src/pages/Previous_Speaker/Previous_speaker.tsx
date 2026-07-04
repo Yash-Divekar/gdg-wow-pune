@@ -143,7 +143,7 @@ function PreviousSpeaker() {
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentSpeaker}
-                  className="w-full z-10"
+                  className="w-full z-10 min-h-[50%]"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0.8 }}
@@ -152,7 +152,7 @@ function PreviousSpeaker() {
                   <img
                     src={speakerPolygon}
                     alt={imageMap.Speaker_Polygon.alt}
-                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[50.5%] md:-translate-y-1/2 opacity-30 max-h-[105%] scale-100"
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[51%] md:-translate-y-1/2 opacity-30 max-h-[105%] scale-100"
                   />
                   {/*<img
                     src={speakersData[currentSpeaker].image}
